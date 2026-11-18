@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小妲己 - 国风美学生活影像社区 - 品牌官网</title>
+<meta name="description" content="小妲己官方网站，国风美学生活影像社区，汇聚原创创作者与精品内容，呈现传统文化与现代生活的温暖碰撞，打造值得信赖的内容生态。">
+<meta name="keywords" content="小妲己,国风,美学,影像,社区,创作者,官网">
+<style>
+:root{
+  --rose:#b23a5b;
+  --rose-deep:#7d2039;
+  --rose-soft:#e8b7c4;
+  --gold:#c9a24b;
+  --ink:#2b2026;
+  --ink-soft:#5d4c55;
+  --cream:#faf4f2;
+  --paper:#fffaf8;
+  --line:#ead8dc;
+  --shadow:0 12px 34px rgba(125,32,57,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+ul{list-style:none;}
+
+/* ============ 吸顶区 ============ */
+.sticky-top{position:sticky;top:0;z-index:90;}
+.notice-bar{
+  background:linear-gradient(90deg,var(--rose-deep),var(--rose));
+  color:#fff2f5;
+  font-size:13.5px;
+  padding:8px 20px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  overflow:hidden;
+}
+.notice-bar .tag{
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:20px;
+  padding:1px 10px;
+  font-size:12px;
+  white-space:nowrap;
+  flex-shrink:0;
+  letter-spacing:1px;
+}
+.notice-track{
+  overflow:hidden;
+  white-space:nowrap;
+  flex:1;
+}
+.notice-track span{
+  display:inline-block;
+  padding-left:100%;
+  animation:scrollLeft 26s linear infinite;
+}
+.notice-track span em{font-style:normal;color:var(--rose-soft);margin:0 6px;}
+@keyframes scrollLeft{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+
+header.site-header{
+  background:rgba(255,250,248,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 18px rgba(125,32,57,.05);
+}
+.header-inner{
+  max-width:1220px;
+  margin:0 auto;
+  padding:0 24px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+}
+.logo-mark{
+  width:40px;height:40px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:18px;
+  box-shadow:0 6px 14px rgba(178,58,91,.35);
+  letter-spacing:1px;
+}
+.logo-text b{font-size:18px;letter-spacing:2px;color:var(--rose-deep);display:block;line-height:1.2;}
+.logo-text small{font-size:10.5px;color:var(--ink-soft);letter-spacing:2.5px;}
+nav.main-nav{display:flex;gap:22px;margin-left:8px;flex-wrap:wrap;}
+nav.main-nav a{
+  font-size:14.5px;color:var(--ink-soft);position:relative;padding:4px 0;transition:.25s;
+}
+nav.main-nav a:hover{color:var(--rose);}
+nav.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;
+  background:linear-gradient(90deg,var(--rose),var(--gold));transition:.28s;border-radius:2px;
+}
+nav.main-nav a:hover::after{width:100%;}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:12px;}
+.search-box{
+  display:flex;align-items:center;
+  background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:6px 8px 6px 16px;
+  transition:.25s;position:relative;
+}
+.search-box:focus-within{border-color:var(--rose);box-shadow:0 0 0 4px rgba(178,58,91,.10);}
+.search-box input{
+  border:none;outline:none;width:150px;font-size:13.5px;background:transparent;color:var(--ink);
+}
+.search-box input::placeholder{color:#b9a3aa;}
+.search-box button{
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+  color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;
+}
+.search-hint{
+  position:absolute;top:46px;right:0;width:250px;
+  background:#fff;border-radius:12px;box-shadow:var(--shadow);
+  border:1px solid var(--line);padding:10px;font-size:13px;
+  color:var(--ink-soft);display:none;z-index:20;
+}
+.search-hint.show{display:block;}
+.search-hint b{color:var(--rose-deep);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;padding:8px;}
+.menu-toggle span{width:22px;height:2px;background:var(--rose-deep);border-radius:2px;transition:.3s;}
+
+/* ============ 通用容器 ============ */
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px;}
+section.block{padding:72px 0;scroll-margin-top:120px;}
+.sec-head{margin-bottom:38px;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;}
+.sec-head .idx{
+  font-size:13px;letter-spacing:3px;color:var(--gold);font-weight:700;
+  border-bottom:2px solid var(--gold);padding-bottom:2px;
+}
+.sec-head h2{
+  font-size:29px;letter-spacing:1px;color:var(--rose-deep);font-weight:800;line-height:1.3;
+}
+.sec-head p{font-size:14px;color:var(--ink-soft);flex-basis:100%;margin-top:-4px;max-width:720px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:30px;font-size:14.5px;font-weight:600;
+  transition:.28s;letter-spacing:.5px;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+  color:#fff;box-shadow:0 10px 22px rgba(178,58,91,.30);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(178,58,91,.40);}
+.btn-ghost{
+  border:1.5px solid var(--rose-soft);color:var(--rose-deep);background:#fff;
+}
+.btn-ghost:hover{background:var(--rose-soft);color:#fff;border-color:var(--rose-soft);}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(201,162,75,.16),transparent 46%),
+    radial-gradient(circle at 8% 88%,rgba(178,58,91,.12),transparent 48%),
+    linear-gradient(160deg,#fdf6f4 0%,#f7e9ed 100%);
+  padding:66px 0 78px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;right:-120px;top:-120px;
+  width:340px;height:340px;border-radius:50%;
+  border:1px dashed rgba(178,58,91,.25);
+}
+.hero::after{
+  content:"";position:absolute;left:-90px;bottom:-110px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,75,.16),transparent 70%);
+}
+.hero-inner{
+  max-width:1220px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2;
+}
+.badge-line{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+.badge-line .b{
+  font-size:12.5px;letter-spacing:2px;color:var(--rose-deep);
+  background:#fff;border:1px solid var(--rose-soft);
+  border-radius:30px;padding:4px 14px;font-weight:600;
+}
+.badge-line .dash{width:26px;height:1px;background:var(--gold);}
+.hero h1{
+  font-size:clamp(34px,4.8vw,56px);
+  line-height:1.18;letter-spacing:3px;color:var(--rose-deep);font-weight:900;
+  margin-bottom:8px;
+}
+.hero h1 em{
+  font-style:normal;position:relative;color:var(--rose);
+}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;
+  background:linear-gradient(90deg,rgba(201,162,75,.35),rgba(201,162,75,.05));
+  border-radius:6px;z-index:-1;
+}
+.hero .slogan{
+  font-size:16px;color:var(--ink-soft);letter-spacing:4px;margin:6px 0 22px;
+}
+.hero .intro{
+  font-size:15px;color:var(--ink-soft);line-height:1.95;margin-bottom:28px;max-width:540px;
+}
+.hero .intro b{color:var(--rose-deep);font-weight:700;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:520px;
+}
+.stat{
+  background:rgba(255,255,255,.72);border:1px solid #fff;
+  border-radius:16px;padding:16px 14px;text-align:center;
+  box-shadow:0 8px 20px rgba(125,32,57,.06);
+  backdrop-filter:blur(6px);
+}
+.stat b{display:block;font-size:26px;color:var(--rose-deep);font-weight:900;letter-spacing:.5px;}
+.stat b i{font-size:14px;font-style:normal;color:var(--gold);}
+.stat span{font-size:12.5px;color:var(--ink-soft);letter-spacing:1px;}
+
+/* 首屏主视觉 */
+.hero-visual{position:relative;}
+.hero-visual .main-frame{
+  border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(125,32,57,.22);
+  border:6px solid #fff;transform:rotate(-1.2deg);transition:.5s;
+}
+.hero-visual .main-frame:hover{transform:rotate(0) translateY(-6px);}
+.hero-visual .main-frame svg{width:100%;display:block;aspect-ratio:16/10;}
+.floating-card{
+  position:absolute;right:-10px;bottom:-26px;
+  background:#fff;border-radius:16px;padding:12px 16px;
+  box-shadow:0 14px 30px rgba(125,32,57,.18);
+  display:flex;align-items:center;gap:10px;
+  animation:floatY 4.5s ease-in-out infinite;
+}
+.floating-card .dot{width:10px;height:10px;border-radius:50%;background:#4caf50;box-shadow:0 0 0 4px rgba(76,175,80,.18);}
+.floating-card small{font-size:12px;color:var(--ink-soft);}
+.floating-card b{font-size:13px;color:var(--rose-deep);display:block;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+.hero-visual .seal{
+  position:absolute;left:-18px;top:-18px;
+  width:66px;height:66px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#a97f2c);
+  color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;
+  display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.3;
+  box-shadow:0 10px 20px rgba(201,162,75,.4);
+  transform:rotate(-10deg);
+}
+
+/* ============ 焦点视频 ============ */
+.focus-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;}
+.vcard{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:#fff;box-shadow:var(--shadow);
+  transition:.35s;border:1px solid rgba(234,216,220,.7);
+}
+.vcard:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(125,32,57,.18);}
+.vcover{position:relative;overflow:hidden;}
+.vcover svg{width:100%;display:block;transition:.6s;}
+.vcard:hover .vcover svg{transform:scale(1.05);}
+.vcover .shade{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(43,32,38,0) 40%,rgba(43,32,38,.72) 100%);
+}
+.vcover .play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.3s;
+}
+.vcover .play::after{
+  content:"";border-left:16px solid var(--rose-deep);
+  border-top:10px solid transparent;border-bottom:10px solid transparent;
+  margin-left:4px;
+}
+.vcard:hover .play{transform:translate(-50%,-50%) scale(1.12);background:#fff;}
+.vmeta{position:absolute;left:14px;bottom:12px;right:14px;color:#fff;}
+.vmeta .tags{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;}
+.vmeta .tags span{
+  font-size:11px;background:rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:20px;padding:1px 9px;backdrop-filter:blur(4px);
+}
+.vmeta h3{font-size:17px;line-height:1.45;font-weight:700;letter-spacing:.5px;}
+.vmeta .sub{font-size:12.5px;opacity:.88;margin-top:5px;}
+.vbody{padding:16px 18px 18px;}
+.vbody p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:12px;}
+.vfoot{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  font-size:12.5px;color:#8d7680;
+}
+.vfoot .author{display:flex;align-items:center;gap:7px;color:var(--rose-deep);font-weight:600;}
+.avatar{
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;font-weight:700;flex-shrink:0;
+}
+.act-btns{margin-left:auto;display:flex;gap:8px;}
+.act{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:#8d7680;padding:4px 10px;border-radius:20px;
+  background:#fbf1f3;transition:.25s;
+}
+.act:hover{background:var(--rose-soft);color:#fff;}
+.act.liked{background:var(--rose);color:#fff;}
+.act.saved{background:var(--gold);color:#fff;}
+.focus-small{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.focus-small .vcard .vmeta h3{font-size:15px;}
+.focus-small .vcard .vbody p{display:none;}
+
+/* ============ 专题 ============ */
+.topics{background:linear-gradient(180deg,#fffaf8,#f7eaee);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.topic{
+  border-radius:18px;overflow:hidden;background:#fff;
+  box-shadow:0 8px 24px rgba(125,32,57,.08);transition:.35s;
+  display:flex;flex-direction:column;
+}
+.topic:hover{transform:translateY(-7px);box-shadow:0 20px 42px rgba(125,32,57,.16);}
+.topic .tim{position:relative;}
+.topic .tim svg{width:100%;display:block;aspect-ratio:16/9;}
+.topic .tim .status{
+  position:absolute;left:12px;top:12px;
+  font-size:11.5px;padding:3px 10px;border-radius:20px;
+  background:rgba(43,32,38,.62);color:#fff;backdrop-filter:blur(4px);letter-spacing:.5px;
+}
+.topic .tim .status.live{background:var(--rose);}
+.topic .tbody{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+.topic .tbody h3{font-size:17.5px;color:var(--rose-deep);margin-bottom:8px;letter-spacing:.5px;}
+.topic .tbody p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;flex:1;}
+.topic .tbody .meta{
+  margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);
+  display:flex;justify-content:space-between;font-size:12.5px;color:#9a828b;
+}
+.topic .tbody .meta b{color:var(--rose);}
+
+/* ============ 创作者 ============ */
+.creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.creator{
+  background:#fff;border-radius:20px;padding:24px;
+  border:1px solid var(--line);position:relative;overflow:hidden;
+  transition:.35s;box-shadow:0 6px 20px rgba(125,32,57,.06);
+}
+.creator::before{
+  content:"";position:absolute;right:-30px;top:-30px;
+  width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,75,.18),transparent 70%);
+}
+.creator:hover{transform:translateY(-6px);border-color:var(--rose-soft);box-shadow:0 18px 38px rgba(125,32,57,.14);}
+.creator-top{display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;}
+.creator-top .avatar{width:56px;height:56px;font-size:20px;border-radius:16px;transform:rotate(-3deg);box-shadow:0 6px 14px rgba(125,32,57,.22);}
+.creator-top h3{font-size:17px;color:var(--rose-deep);letter-spacing:.5px;}
+.creator-top small{font-size:12px;color:var(--gold);letter-spacing:1px;}
+.creator p{font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin-bottom:16px;}
+.creator .nums{display:flex;gap:20px;padding-top:14px;border-top:1px dashed var(--line);}
+.creator .nums div b{display:block;font-size:16px;color:var(--rose-deep);}
+.creator .nums div span{font-size:11.5px;color:#9a828b;}
+.creator .nums .more{margin-left:auto;align-self:center;}
+.creator .nums .more button{
+  font-size:12.5px;color:var(--rose);border:1px solid var(--rose-soft);
+  border-radius:20px;padding:6px 14px;transition:.25s;
+}
+.creator .nums .more button:hover{background:var(--rose);color:#fff;}
+
+/* ============ 故事随笔 ============ */
+.stories{background:#2b2026;color:#f3e6ea;position:relative;overflow:hidden;}
+.stories::before{
+  content:"";position:absolute;left:-100px;top:-100px;width:380px;height:380px;
+  border-radius:50%;background:radial-gradient(circle,rgba(178,58,91,.35),transparent 68%);
+}
+.stories::after{
+  content:"";position:absolute;right:-80px;bottom:-120px;width:320px;height:320px;
+  border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.22),transparent 68%);
+}
+.stories .wrap{position:relative;z-index:2;}
+.stories .sec-head h2{color:#fff;}
+.stories .sec-head .idx{color:var(--gold);}
+.stories .sec-head p{color:#c9b3bb;}
+.story-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.story{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;padding:24px;backdrop-filter:blur(6px);transition:.35s;
+}
+.story:hover{background:rgba(255,255,255,.09);transform:translateY(-5px);border-color:rgba(201,162,75,.4);}
+.story .quote{
+  font-size:34px;line-height:1;color:var(--gold);font-family:Georgia,serif;margin-bottom:8px;
+}
+.story h3{font-size:16.5px;color:#fff;margin-bottom:10px;letter-spacing:.5px;}
+.story p{font-size:13.5px;color:#c9b3bb;line-height:1.9;}
+.story .by{margin-top:16px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#a98d97;}
+.story .by .avatar{width:24px;height:24px;font-size:11px;}
+
+/* ============ 作品墙 ============ */
+.wall{background:#fdf6f4;}
+.wall-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  grid-auto-rows:120px;
+}
+.witem{
+  position:relative;border-radius:14px;overflow:hidden;cursor:pointer;
+  box-shadow:0 6px 18px rgba(125,32,57,.10);transition:.35s;
+}
+.witem svg{width:100%;height:100%;display:block;transition:.55s;}
+.witem:hover svg{transform:scale(1.08);}
+.witem:hover{box-shadow:0 16px 32px rgba(125,32,57,.20);}
+.witem.big{grid-column:span 2;grid-row:span 2;}
+.witem.wide{grid-column:span 2;grid-row:span 1;}
+.witem.tall{grid-row:span 2;}
+.witem .cap{
+  position:absolute;left:10px;bottom:9px;right:10px;
+  font-size:12.5px;color:#fff;letter-spacing:.5px;
+  text-shadow:0 1px 6px rgba(0,0,0,.55);
+}
+.witem .cap small{display:block;font-size:11px;opacity:.82;margin-top:1px;}
+
+/* ============ 评论/评价 ============ */
+.reviews{background:linear-gradient(180deg,#fffaf8,#f7eaee);border-top:1px solid var(--line);}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.review{
+  background:#fff;border-radius:16px;padding:20px 22px;
+  border-left:4px solid var(--rose-soft);
+  box-shadow:0 6px 18px rgba(125,32,57,.06);transition:.3s;
+}
+.review:hover{border-left-color:var(--rose);transform:translateX(4px);}
+.review p{font-size:13.8px;color:var(--ink-soft);line-height:1.9;margin-bottom:14px;}
+.review .who{display:flex;align-items:center;gap:10px;}
+.review .who .avatar{width:32px;height:32px;font-size:13px;}
+.review .who b{font-size:13.5px;color:var(--rose-deep);display:block;line-height:1.3;}
+.review .who small{font-size:11.5px;color:#9a828b;}
+.review .stars{margin-left:auto;color:var(--gold);font-size:13px;letter-spacing:2px;}
+
+/* ============ 动态 + FAQ ============ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+.news-list{display:flex;flex-direction:column;gap:10px;}
+.news{
+  display:flex;align-items:flex-start;gap:14px;padding:14px 16px;
+  border-radius:12px;background:#fff;border:1px solid var(--line);transition:.25s;
+}
+.news:hover{background:#fff4f6;border-color:var(--rose-soft);}
+.news .date{
+  flex-shrink:0;font-size:12px;color:var(--rose);font-weight:700;
+  background:#fdeef1;border-radius:8px;padding:4px 9px;letter-spacing:.5px;
+}
+.news div b{font-size:14px;color:var(--ink);display:block;line-height:1.5;margin-bottom:2px;}
+.news div span{font-size:12.5px;color:#9a828b;}
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:0 18px;margin-bottom:10px;transition:.25s;
+}
+.faq details[open]{border-color:var(--rose-soft);box-shadow:0 8px 20px rgba(125,32,57,.08);}
+.faq summary{
+  list-style:none;cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:600;
+  color:var(--ink);display:flex;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::before{
+  content:"+";width:20px;height:20px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:#fdeef1;color:var(--rose);font-size:15px;font-weight:700;
+  transition:.25s;
+}
+.faq details[open] summary::before{content:"−";background:var(--rose);color:#fff;}
+.faq details p{font-size:13.5px;color:var(--ink-soft);line-height:1.85;padding:0 0 16px 30px;}
+
+/* ============ 联系/投稿 ============ */
+.contact-band{
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose) 70%,#c4708a);
+  color:#fff;border-radius:26px;padding:44px 42px;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;
+  box-shadow:0 22px 46px rgba(125,32,57,.28);position:relative;overflow:hidden;
+}
+.contact-band::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.22);
+}
+.contact-band h2{font-size:26px;letter-spacing:1px;margin-bottom:12px;}
+.contact-band p{font-size:14px;color:#ffe4ea;line-height:1.9;max-width:560px;}
+.contact-band .acts{display:flex;flex-direction:column;gap:12px;}
+.contact-band .acts button{
+  background:#fff;color:var(--rose-deep);border-radius:30px;padding:13px 22px;
+  font-size:14.5px;font-weight:700;letter-spacing:.5px;transition:.28s;
+  box-shadow:0 10px 22px rgba(0,0,0,.12);
+}
+.contact-band .acts button:hover{transform:translateY(-3px);background:var(--gold);color:#fff;}
+.contact-band .acts button.ghost{
+  background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5);
+  box-shadow:none;
+}
+.contact-band .acts button.ghost:hover{background:rgba(255,255,255,.26);transform:translateY(-3px);color:#fff;}
+
+/* ============ 页脚 ============ */
+footer.site-footer{
+  background:#241a1f;color:#bfa8b0;padding:56px 0 26px;margin-top:72px;
+}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:38px;}
+.foot-brand .logo-text b{color:#fff;}
+.foot-brand .logo-text small{color:#a98d97;}
+.foot-brand p{font-size:13px;line-height:1.9;margin-top:14px;color:#a98d97;max-width:320px;}
+.foot-col h4{font-size:14px;color:#fff;margin-bottom:14px;letter-spacing:1px;position:relative;padding-bottom:8px;}
+.foot-col h4::after{content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:var(--gold);border-radius:2px;}
+.foot-col a{display:block;font-size:13px;color:#a98d97;margin-bottom:9px;transition:.22s;}
+.foot-col a:hover{color:var(--rose-soft);transform:translateX(3px);}
+.foot-col p{font-size:13px;color:#a98d97;margin-bottom:8px;line-height:1.7;}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#8d7680;
+}
+
+/* ============ 回到顶部 & Toast ============ */
+#backTop{
+  position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow:0 10px 24px rgba(178,58,91,.38);opacity:0;pointer-events:none;
+  transition:.35s;z-index:80;
+}
+#backTop.show{opacity:1;pointer-events:auto;}
+#backTop:hover{transform:translateY(-4px);}
+#toast{
+  position:fixed;left:50%;bottom:44px;transform:translate(-50%,20px);
+  background:#2b2026;color:#fff;font-size:13.5px;padding:11px 24px;border-radius:30px;
+  box-shadow:0 14px 32px rgba(0,0,0,.28);opacity:0;pointer-events:none;
+  transition:.35s;z-index:120;letter-spacing:.5px;
+}
+#toast.show{opacity:1;transform:translate(-50%,0);}
+
+/* 弹窗 */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(43,32,38,.55);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;pointer-events:none;transition:.3s;z-index:110;
+}
+.modal-mask.show{opacity:1;pointer-events:auto;}
+.modal{
+  background:#fff;border-radius:20px;max-width:480px;width:100%;padding:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,.3);transform:translateY(14px);transition:.3s;
+  border-top:4px solid var(--rose);max-height:86vh;overflow:auto;
+}
+.modal-mask.show .modal{transform:translateY(0);}
+.modal h3{font-size:19px;color:var(--rose-deep);margin-bottom:12px;letter-spacing:.5px;}
+.modal .mbody{font-size:14px;color:var(--ink-soft);line-height:1.9;margin-bottom:20px;}
+.modal .mclose{
+  margin-left:auto;display:block;background:var(--rose);color:#fff;
+  border-radius:24px;padding:10px 26px;font-size:14px;font-weight:600;transition:.25s;
+}
+.modal .mclose:hover{background:var(--rose-deep);}
+.share-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 4px;}
+.share-row button{
+  flex:1;min-width:100px;padding:11px 0;border-radius:12px;font-size:13.5px;
+  background:#fbf1f3;color:var(--rose-deep);border:1px solid var(--line);transition:.25s;
+}
+.share-row button:hover{background:var(--rose-soft);color:#fff;}
+
+/* ============ 响应式 ============ */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual{order:-1;max-width:520px;margin:0 auto;}
+  .focus-grid{grid-template-columns:1fr;}
+  .topic-grid{grid-template-columns:1fr 1fr;}
+  .creator-grid{grid-template-columns:1fr 1fr;}
+  .story-list{grid-template-columns:1fr;}
+  .review-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;gap:32px;}
+  .contact-band{grid-template-columns:1fr;padding:34px 26px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .wall-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:760px){
+  .header-inner{height:auto;padding:12px 18px;flex-wrap:wrap;gap:12px;}
+  nav.main-nav{
+    width:100%;display:none;flex-direction:column;gap:0;
+    border-top:1px solid var(--line);padding-top:8px;
+  }
+  nav.main-nav.open{display:flex;}
+  nav.main-nav a{padding:10px 4px;border-bottom:1px dashed var(--line);}
+  .header-tools{order:3;width:100%;display:none;}
+  .header-tools.open{display:flex;}
+  .search-box{flex:1;}
+  .search-box input{width:100%;}
+  .menu-toggle{display:flex;margin-left:auto;}
+  .notice-bar{font-size:12.5px;padding:7px 14px;}
+  .hero{padding:44px 0 56px;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .topic-grid{grid-template-columns:1fr;}
+  .creator-grid{grid-template-columns:1fr;}
+  .wall-grid{grid-template-columns:1fr 1fr;grid-auto-rows:110px;}
+  .witem.big{grid-column:span 2;grid-row:span 2;}
+  .witem.tall{grid-row:span 1;}
+  .sec-head h2{font-size:23px;}
+  section.block{padding:52px 0;}
+  .floating-card{right:4px;bottom:-18px;padding:9px 12px;}
+  .contact-band .acts{flex-direction:column;}
+}
+@media(max-width:480px){
+  .hero h1{letter-spacing:1.5px;}
+  .stat b{font-size:21px;}
+  .foot-grid{grid-template-columns:1fr;}
+  .review .stars{display:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶区：公告条 + 页头 -->
+<div class="sticky-top">
+  <div class="notice-bar">
+    <span class="tag">官方发布</span>
+    <div class="notice-track">
+      <span>「小妲己·国风新影像计划」第二季正式启动，面向全国创作者开放报名通道 <em>|</em> 新增《器物有声》系列短片 6 集，已在品牌官网专题页上线 <em>|</em> 冬日限定企划「一帧暖意」作品征集进行中，投稿即有机会获得品牌联名礼盒 <em>|</em> 创作者成长营第 12 期开放 120 个席位，报名截至本月底</span>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark">妲</span>
+        <span class="logo-text">
+          <b>小妲己</b>
+          <small>GUOFENG IMAGE</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#top">首页</a>
+        <a href="#focus">视频焦点</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#wall">影像墙</a>
+        <a href="#updates">企业动态</a>
+        <a href="#contact">联系我们</a>
+      </nav>
+      <div class="header-tools" id="headerTools">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="搜索内容 / 创作者 / 专题" aria-label="站内搜索">
+          <button id="searchBtn" aria-label="搜索">🔍</button>
+          <div class="search-hint" id="searchHint"></div>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="展开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge-line">
+        <span class="b">品牌官方网站</span>
+        <span class="dash"></span>
+        <span class="b">国风美学生活影像</span>
+      </div>
+      <h1>小妲己</h1>
+      <p class="slogan">以影像为引 · 见东方之美</p>
+      <p class="intro">
+        <b>小妲己</b>是一家深耕国风美学与当代生活的影像品牌，官方网站集精品内容发布、创作者社区运营与企业动态于一体。我们以真实、温暖、有匠心的影像语言，记录器物、服饰、节气与日常里的东方气韵，为创作者搭建高品质内容生态。作为持续运营的原创影像平台，小妲己坚持正版与专业，与行业伙伴共同推动国风内容的影响力，让每一帧画面都值得被认真对待。
+      </p>
+      <div class="hero-actions">
+        <a href="#focus" class="btn btn-primary">进入视频焦点 →</a>
+        <a href="#creators" class="btn btn-ghost">认识创作者</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-count="1280">0<i>+</i></b><span>原创影像作品</span></div>
+        <div class="stat"><b data-count="326">0<i>位</i></b><span>签约创作者</span></div>
+        <div class="stat"><b data-count="86">0<i>万</i></b><span>社区共同用户</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="seal">国风<br>影像</div>
+      <div class="main-frame">
+        <svg viewBox="0 0 800 500" role="img" aria-label="小妲己国风美学生活影像品牌主视觉">
+          <defs>
+            <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f7d9de"/>
+              <stop offset="0.55" stop-color="#e8a9b8"/>
+              <stop offset="1" stop-color="#b23a5b"/>
+            </linearGradient>
+            <linearGradient id="heroHill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#8d4257"/>
+              <stop offset="1" stop-color="#4a2233"/>
+            </linearGradient>
+            <linearGradient id="heroMoon" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff6e0"/>
+              <stop offset="1" stop-color="#e6c27a"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="500" fill="url(#heroSky)"/>
+          <circle cx="610" cy="130" r="78" fill="url(#heroMoon)" opacity="0.95"/>
+          <circle cx="610" cy="130" r="96" fill="none" stroke="#fff6e0" stroke-width="1" opacity="0.5"/>
+          <path d="M0 360 Q170 268 330 340 T800 300 L800 500 L0 500 Z" fill="url(#heroHill)" opacity="0.86"/>
+          <path d="M0 410 Q200 340 400 400 T800 370 L800 500 L0 500 Z" fill="#331725" opacity="0.9"/>
+          <g stroke="#fff2f5" stroke-width="1.4" fill="none" opacity="0.6">
+            <path d="M120 150 q18 -26 36 0 q-18 22 -36 0"/>
+            <path d="M200 200 q14 -20 28 0 q-14 18 -28 0"/>
+            <path d="M320 120 q16 -22 32 0 q-16 18 -32 0"/>
+          </g>
+          <g fill="#fff6e0" opacity="0.85">
+            <circle cx="160" cy="120" r="2.4"/>
+            <circle cx="290" cy="80" r="2"/>
+            <circle cx="420" cy="160" r="2.6"/>
+            <circle cx="520" cy="90" r="1.8"/>
+            <circle cx="700" cy="230" r="2.2"/>
+            <circle cx="90" cy="230" r="2"/>
+          </g>
+          <g transform="translate(360 300)">
+            <path d="M0 0 C40 -30 90 -30 120 6 L112 14 C84 -14 44 -16 8 10 Z" fill="#1d0f17" opacity="0.8"/>
+            <circle cx="12" cy="6" r="7" fill="#e6c27a"/>
+            <circle cx="98" cy="6" r="7" fill="#e6c27a"/>
+            <path d="M20 0 Q60 -18 100 0" stroke="#fff2f5" stroke-width="2" fill="none" opacity="0.7"/>
+          </g>
+          <rect x="0" y="456" width="800" height="44" fill="#1c0e15" opacity="0.55"/>
+          <text x="40" y="484" font-size="17" fill="#f5dfe5" letter-spacing="6" font-family="serif">小妲己 · 东方光影志</text>
+        </svg>
+      </div>
+      <div class="floating-card">
+        <span class="dot"></span>
+        <div>
+          <b>本周更新 12 支新片</b>
+          <small>品牌官网 · 官方发布</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点视频 -->
+<section class="block" id="focus">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">01 / FOCUS</span>
+      <h2>视频焦点 · 本周精选</h2>
+      <p>由官方编辑部与创作者社区共同推荐，涵盖器物、服饰、节气与人物访谈。所有内容均为原创正版，支持高清呈现。</p>
+    </div>
+    <div class="focus-grid" style="margin-bottom:24px;">
+      <article class="vcard">
+        <div class="vcover">
+          <svg viewBox="0 0 800 450" role="img" aria-label="焦点视频：一针一线里的东方衣冠之美">
+            <defs>
+              <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f6dfe4"/><stop offset="1" stop-color="#c4708a"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="450" fill="url(#f1)"/>
+            <g opacity="0.5" stroke="#fff" stroke-width="1.2" fill="none">
+              <path d="M0 360 Q200 300 400 350 T800 320"/>
+              <path d="M0 400 Q200 340 400 390 T800 360"/>
+            </g>
+            <g transform="translate(400 225)">
+              <ellipse cx="0" cy="0" rx="150" ry="96" fill="#7d2039" opacity="0.25"/>
+              <path d="M-150 60 Q-90 -40 0 -70 Q90 -40 150 60 L120 74 Q60 -10 0 -34 Q-60 -10 -120 74 Z" fill="#fff6f0" opacity="0.9"/>
+              <circle cx="-46" cy="24" r="9" fill="#c9a24b"/>
+              <circle cx="46" cy="24" r="9" fill="#c9a24b"/>
+              <path d="M-16 54 L0 34 L16 54" stroke="#7d2039" stroke-width="4" fill="none"/>
+            </g>
+            <circle cx="150" cy="120" r="46" fill="#fff" opacity="0.22"/>
+            <circle cx="660" cy="330" r="66" fill="#fff" opacity="0.16"/>
+          </svg>
+          <div class="shade"></div>
+          <div class="play"></div>
+          <div class="vmeta">
+            <div class="tags"><span>文化访谈</span><span>传统服饰</span><span>高清</span></div>
+            <h3>一针一线里的东方衣冠之美</h3>
+            <div class="sub">记录三位手艺人如何用半生时间复原古法盘扣</div>
+          </div>
+        </div>
+        <div class="vbody">
+          <p>从选丝、染色到盘扣走线，镜头贴着指尖移动，把一件衣裳的十八道工序拆解成可以呼吸的细节。片中三位手艺人平均从业二十六年，她们说，慢不是落后，是对事物本来的尊重。</p>
+          <div class="vfoot">
+            <span class="author"><span class="avatar" style="background:#b23a5b;">苏</span>苏绛工作室</span>
+            <span>· 18.6万次播放</span>
+            <div class="act-btns">
+              <button class="act like-btn" data-base="2864">♡ 2.8k</button>
+              <button class="act save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="focus-small">
+        <article class="vcard">
+          <div class="vcover">
+            <svg viewBox="0 0 400 225" role="img" aria-label="焦点视频：茶席二十四节气">
+              <rect width="400" height="225" fill="#e9d3b6"/>
+              <circle cx="320" cy="50" r="34" fill="#c9a24b" opacity="0.55"/>
+              <path d="M0 170 Q100 130 200 165 T400 150 L400 225 L0 225 Z" fill="#8f6a3f" opacity="0.72"/>
+              <rect x="110" y="120" width="70" height="48" rx="8" fill="#f7efe2"/>
+              <path d="M180 130 q28 0 28 18 q0 18 -28 18" fill="none" stroke="#f7efe2" stroke-width="8"/>
+              <path d="M120 100 q-8 -20 6 -32 M146 100 q8 -20 -6 -32" stroke="#fff" stroke-width="3" fill="none" opacity="0.8"/>
+            </svg>
+            <div class="shade"></div>
+            <div class="play"></div>
+            <div class="vmeta">
+              <div class="tags"><span>日常记录</span><span>节气</span></div>
+              <h3>茶席上的二十四节气</h3>
+              <div class="sub">立冬 · 一盏暖茶</div>
+            </div>
+          </div>
+          <div class="vbody">
+            <div class="vfoot">
+              <span class="author"><span class="avatar" style="background:#c9a24b;">林</span>林间茶事</span>
+              <div class="act-btns"><button class="act like-btn" data-base="1208">♡ 1.2k</button></div>
+            </div>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcover">
+            <svg viewBox="0 0 400 225" role="img" aria-label="焦点视频：老宅改造后的第五个春天">
+              <rect width="400" height="225" fill="#cfd9cd"/>
+              <rect x="60" y="100" width="150" height="90" fill="#f4ece0"/>
+              <path d="M50 100 L135 55 L220 100 Z" fill="#6d5b48"/>
+              <rect x="240" y="120" width="110" height="70" fill="#e8ddcb"/>
+              <rect x="80" y="130" width="34" height="40" fill="#a9bfc7"/>
+              <rect x="270" y="140" width="28" height="28" fill="#b9cbb4"/>
+              <circle cx="330" cy="60" r="26" fill="#f2d98c" opacity="0.8"/>
+              <path d="M0 195 Q100 175 200 195 T400 185 L400 225 L0 225 Z" fill="#8a9d84"/>
+            </svg>
+            <div class="shade"></div>
+            <div class="play"></div>
+            <div class="vmeta">
+              <div class="tags"><span>生活方式</span><span>家居</span></div>
+              <h3>老宅改造后的第五个春天</h3>
+              <div class="sub">从破败院落回到有人气的家</div>
+            </div>
+          </div>
+          <div class="vbody">
+            <div class="vfoot">
+              <span class="author"><span class="avatar" style="background:#7d9a74;">周</span>拾光造屋</span>
+              <div class="act-btns"><button class="act like-btn" data-base="934">♡ 934</button></div>
+            </div>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcover">
+            <svg viewBox="0 0 400 225" role="img" aria-label="焦点视频：一支簪子的七种戴法">
+              <rect width="400" height="225" fill="#e3c6cf"/>
+              <circle cx="200" cy="112" r="62" fill="#fff4f6" opacity="0.8"/>
+              <path d="M120 150 Q200 90 280 150" stroke="#b23a5b" stroke-width="5" fill="none"/>
+              <circle cx="200" cy="112" r="14" fill="#c9a24b"/>
+              <path d="M200 84 L200 60 M186 74 L214 74" stroke="#b23a5b" stroke-width="4" stroke-linecap="round"/>
+              <g fill="#fff" opacity="0.6">
+                <circle cx="90" cy="60" r="4"/><circle cx="320" cy="80" r="5"/><circle cx="300" cy="180" r="4"/>
+              </g>
+            </svg>
+            <div class="shade"></div>
+            <div class="play"></div>
+            <div class="vmeta">
+              <div class="tags"><span>实用技巧</span><span>发饰</span></div>
+              <h3>一支簪子的七种戴法</h3>
+              <div class="sub">通勤也能用的东方发式</div>
+            </div>
+          </div>
+          <div class="vbody">
+            <div class="vfoot">
+              <span class="author"><span class="avatar" style="background:#c4708a;">顾</span>顾十二</span>
+              <div class="act-btns"><button class="act like-btn" data-base="1571">♡ 1.5k</button></div>
+            </div>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcover">
+            <svg viewBox="0 0 400 225" role="img" aria-label="焦点视频：木作学徒的第一百天">
+              <rect width="400" height="225" fill="#d9c3a5"/>
+              <rect x="0" y="170" width="400" height="55" fill="#8a6a4a" opacity="0.7"/>
+              <rect x="120" y="90" width="160" height="70" rx="6" fill="#f0e2cd"/>
+              <path d="M120 90 L200 55 L280 90 Z" fill="#a6815c"/>
+              <rect x="150" y="120" width="46" height="40" fill="#c9a24b" opacity="0.7"/>
+              <g stroke="#5c452f" stroke-width="3" stroke-linecap="round">
+                <path d="M320 140 l34 -30 M330 150 l34 -30"/>
+              </g>
+              <circle cx="70" cy="70" r="22" fill="#fff" opacity="0.35"/>
+            </svg>
+            <div class="shade"></div>
+            <div class="play"></div>
+            <div class="vmeta">
+              <div class="tags"><span>创作幕后</span><span>手作</span></div>
+              <h3>木作学徒的第一百天</h3>
+              <div class="sub">从刨花到一张小凳</div>
+            </div>
+          </div>
+          <div class="vbody">
+            <div class="vfoot">
+              <span class="author"><span class="avatar" style="background:#a6815c;">郑</span>郑木匠</span>
+              <div class="act-btns"><button class="act like-btn" data-base="762">♡ 762</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 专题企划 -->
+<section class="block topics" id="topics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">02 / PROJECTS</span>
+      <h2>专题企划 · 精品内容持续更新</h2>
+      <p>围绕国风生活方式的长期企划，每一季都由品牌编辑部策划、创作者共建，呈现多元而真实的东方日常。</p>
+    </div>
+    <div class="topic-grid">
+      <article class="topic">
+        <div class="tim">
+          <svg viewBox="0 0 400 225" role="img" aria-label="专题：器物有声 手作光影纪录">
+            <rect width="400" height="225" fill="#e7d6bd"/>
+            <circle cx="130" cy="112" r="56" fill="#b98d55" opacity="0.6"/>
+            <circle cx="130" cy="112" r="34" fill="#f2e6d2"/>
+            <path d="M240 60 q40 52 0 104 q60 -30 60 -52 q0 -22 -60 -52Z" fill="#7d5741" opacity="0.72"/>
+            <path d="M0 190 Q100 160 200 190 T400 178 L400 225 L0 225Z" fill="#8d6a4a" opacity="0.7"/>
+          </svg>
+          <span class="status live">更新中 · 第 6 集</span>
+        </div>
+        <div class="tbody">
+          <h3>器物有声</h3>
+          <p>从陶、木、竹到漆，我们走进十二位匠人的工作间，听器物如何被赋予声音与温度。每集聚焦一种材料，用长镜头还原制作的完整时间。</p>
+          <div class="meta"><span>共 12 集 · 官方策划</span><b>已上线 6 集</b></div>
+        </div>
+      </article>
+      <article class="topic">
+        <div class="tim">
+          <svg viewBox="0 0 400 225" role="img" aria-label="专题：一帧暖意 冬日影像征集">
+            <rect width="400" height="225" fill="#c6d4dd"/>
+            <circle cx="310" cy="58" r="30" fill="#fff6e0" opacity="0.9"/>
+            <path d="M0 160 Q90 120 180 155 T400 140 L400 225 L0 225Z" fill="#eef4f7"/>
+            <path d="M60 190 l14 -34 l14 34 M96 190 l12 -28 l12 28" stroke="#7a94a3" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="220" y="130" width="60" height="46" fill="#8fa6b3" opacity="0.8"/>
+            <path d="M210 130 L250 100 L290 130" fill="#5d7482"/>
+          </svg>
+          <span class="status">征集进行中</span>
+        </div>
+        <div class="tbody">
+          <h3>一帧暖意</h3>
+          <p>冬日限定的影像征集企划，邀请创作者用一分钟以内的短片记录身边的小小暖意：一碗汤、一双手、一次久别重逢。入选作品将在品牌官网首页展映。</p>
+          <div class="meta"><span>开放投稿 · 12 月 20 日截止</span><b>可报名</b></div>
+        </div>
+      </article>
+      <article class="topic">
+        <div class="tim">
+          <svg viewBox="0 0 400 225" role="img" aria-label="专题：城市里的东方角落">
+            <rect width="400" height="225" fill="#d8c8d0"/>
+            <rect x="30" y="110" width="90" height="95" fill="#f5ecef"/>
+            <rect x="140" y="80" width="70" height="125" fill="#b9a0ad"/>
+            <rect x="230" y="125" width="110" height="80" fill="#efe3e8"/>
+            <path d="M30 110 L75 70 L120 110" fill="#8a6a7a"/>
+            <path d="M140 80 L175 50 L210 80" fill="#7a5a6a"/>
+            <circle cx="320" cy="60" r="28" fill="#c9a24b" opacity="0.65"/>
+            <path d="M0 205 Q100 185 200 205 T400 195 L400 225 L0 225Z" fill="#a98d97"/>
+          </svg>
+          <span class="status">已完结 · 全 8 集</span>
+        </div>
+        <div class="tbody">
+          <h3>城市里的东方角落</h3>
+          <p>我们在八座城市寻找被现代建筑包裹的传统空间：骑楼下的茶摊、写字楼里的香室、菜市场旁的老戏台。城市在变，那些角落依然固执地温柔着。</p>
+          <div class="meta"><span>城市探索 · 联合出品</span><b>口碑推荐</b></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="block" id="creators">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">03 / CREATORS</span>
+      <h2>创作者矩阵 · 与真实的人同行</h2>
+      <p>小妲己社区聚集了来自器物、服饰、饮食、影像等领域的创作者。官方提供拍摄支持、选题共创与版权保护，让专业的人安心做专业的事。</p>
+    </div>
+    <div class="creator-grid">
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#b23a5b;">苏</span>
+          <div>
+            <h3>苏绛工作室</h3>
+            <small>传统服饰 · 文化访谈</small>
+          </div>
+        </div>
+        <p>专注古法服饰复原与手工艺记录，镜头克制、叙事耐心。团队三人，六年只做一件事：把快要消失的手艺拍下来。</p>
+        <div class="nums">
+          <div><b>128</b><span>作品</span></div>
+          <div><b>42.6万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="苏绛工作室" data-desc="六年深耕古法服饰复原影像，代表作《一针一线里的东方衣冠之美》系列，小妲己官方签约创作者，内容获多项行业口碑推荐。">查看主页</button></div>
+        </div>
+      </article>
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#c9a24b;">林</span>
+          <div>
+            <h3>林间茶事</h3>
+            <small>节气生活 · 茶与器</small>
+          </div>
+        </div>
+        <p>在山中住了七年的茶人，按节气更新影像笔记。她的视频里很少有解说，只有水声、风声和翻动茶则的轻响。</p>
+        <div class="nums">
+          <div><b>96</b><span>作品</span></div>
+          <div><b>31.2万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="林间茶事" data-desc="山中茶人，以节气为线索持续记录茶席与器物，作品被社区用户称为安静的力量，官方专题《器物有声》常驻嘉宾。">查看主页</button></div>
+        </div>
+      </article>
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#7d9a74;">周</span>
+          <div>
+            <h3>拾光造屋</h3>
+            <small>老宅改造 · 生活方式</small>
+          </div>
+        </div>
+        <p>一对夫妻记录老宅改造的第五年。他们不追求网红风，只把院子一点点修回记忆里的样子，过程真实得让人想动手。</p>
+        <div class="nums">
+          <div><b>74</b><span>作品</span></div>
+          <div><b>28.9万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="拾光造屋" data-desc="慢改造实践者，用五年时间修复一座南方老宅，内容覆盖家居收纳、空间动线与旧物利用，是社区高口碑的生活类创作者。">查看主页</button></div>
+        </div>
+      </article>
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#c4708a;">顾</span>
+          <div>
+            <h3>顾十二</h3>
+            <small>东方发饰 · 实用教学</small>
+          </div>
+        </div>
+        <p>把传统发饰拆解成上班族也能用的日常技巧，教学视频节奏轻快。她相信传统不是被供起来的，是要被用起来的。</p>
+        <div class="nums">
+          <div><b>156</b><span>作品</span></div>
+          <div><b>37.4万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="顾十二" data-desc="东方发饰教学创作者，擅长把复杂技法拆成三步以内，内容被大量用户收藏实践，官方社区人气创作者。">查看主页</button></div>
+        </div>
+      </article>
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#a6815c;">郑</span>
+          <div>
+            <h3>郑木匠</h3>
+            <small>木作 · 创作幕后</small>
+          </div>
+        </div>
+        <p>做了三十年木工，最近才开始拍视频。他说镜头比尺子更诚实，因为刨花落下来的样子骗不了人。</p>
+        <div class="nums">
+          <div><b>62</b><span>作品</span></div>
+          <div><b>19.8万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="郑木匠" data-desc="三十年木作经验的匠人创作者，内容真实质朴，记录从选材到成器的完整过程，是小妲己社区新人榜长期在列的创作者。">查看主页</button></div>
+        </div>
+      </article>
+      <article class="creator">
+        <div class="creator-top">
+          <span class="avatar" style="background:#8a6a7a;">砚</span>
+          <div>
+            <h3>砚边小事</h3>
+            <small>书房生活 · 知识科普</small>
+          </div>
+        </div>
+        <p>一位编辑的书房日常，讲笔墨纸砚的冷知识，也讲一个人如何与枯燥相处。视频末尾常有手写的一句话。</p>
+        <div class="nums">
+          <div><b>88</b><span>作品</span></div>
+          <div><b>24.1万</b><span>关注</span></div>
+          <div class="more"><button class="author-btn" data-name="砚边小事" data-desc="图书编辑出身的书房类创作者，擅长把冷门知识讲得温和好懂，内容覆盖文房器物、阅读方法与创作幕后。">查看主页</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 -->
+<section class="block stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">04 / STORIES</span>
+      <h2>影像之外 · 创作者手记</h2>
+      <p>镜头停下来之后，故事还在继续。这里收录创作者与合作者在拍摄现场写下的短记。</p>
+    </div>
+    <div class="story-list">
+      <article class="story">
+        <div class="quote">“</div>
+        <h3>那天我们等了一场雨</h3>
+        <p>拍《器物有声》的漆器那集，需要一段雨落在天井里的声音。我们在老宅里等了四个下午，最后一天的雨只下了七分钟，但录到了想要的那一声。</p>
+        <div class="by"><span class="avatar" style="background:#b23a5b;">苏</span>苏绛 · 导演手记</div>
+      </article>
+      <article class="story">
+        <div class="quote">“</div>
+        <h3>茶凉了才敢开机</h3>
+        <p>一开始总想着把茶席摆得完美，后来发现最好的画面是我忘了镜头、顺手把凉掉的茶倒掉的那一刻。真诚这件事，装不出来。</p>
+        <div class="by"><span class="avatar" style="background:#c9a24b;">林</span>林间茶事 · 拍摄随笔</div>
+      </article>
+      <article class="story">
+        <div class="quote">“</div>
+        <h3>老宅的第五个春天</h3>
+        <p>院子里的那棵桂花终于开得比围墙高了。五年前我们搬进来时它只有半人高，镜头记录下的是房子，其实也是我们自己。</p>
+        <div class="by"><span class="avatar" style="background:#7d9a74;">周</span>拾光造屋 · 日常记录</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 作品墙 -->
+<section class="block wall" id="wall">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">05 / GALLERY</span>
+      <h2>社区影像墙 · 用户作品精选</h2>
+      <p>来自小妲己社区的真实创作。每月由编辑部与创作者共同投票选出，入选作品将获得官方推荐位与版权存证支持。</p>
+    </div>
+    <div class="wall-grid">
+      <div class="witem big">
+        <svg viewBox="0 0 400 400" role="img" aria-label="作品：雨后天井里的青苔与光">
+          <rect width="400" height="400" fill="#b9c9c0"/>
+          <rect x="40" y="40" width="320" height="320" fill="#dbe6df"/>
+          <rect x="90" y="110" width="220" height="220" fill="#a9bfb2"/>
+          <path d="M90 110 L200 40 L310 110" fill="#7d9a8c"/>
+          <circle cx="200" cy="220" r="60" fill="#eaf2ec" opacity="0.7"/>
+          <path d="M120 280 q40 -30 80 0 q40 30 80 0" stroke="#5f7d6c" stroke-width="6" fill="none"/>
+        </svg>
+        <div class="cap">雨后天井里的青苔与光<small>@拾光造屋 · 1.2万喜欢</small></div>
+      </div>
+      <div class="witem tall">
+        <svg viewBox="0 0 300 400" role="img" aria-label="作品：晒在竹竿上的靛蓝染布">
+          <rect width="300" height="400" fill="#dfe7ec"/>
+          <line x1="30" y1="80" x2="270" y2="80" stroke="#8a9aa5" stroke-width="5"/>
+          <path d="M60 80 L60 340 Q90 320 120 340 L120 80Z" fill="#4a6b8a"/>
+          <path d="M150 80 L150 320 Q180 300 210 320 L210 80Z" fill="#3a5876"/>
+          <path d="M230 80 L230 300 Q250 286 270 300 L270 80Z" fill="#5b7fa3"/>
+          <circle cx="240" cy="200" r="40" fill="#fff" opacity="0.18"/>
+        </svg>
+        <div class="cap">晒在竹竿上的靛蓝染布<small>@蓝染日记 · 9860喜欢</small></div>
+      </div>
+      <div class="witem">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品：冬至夜里的一碗桂花酒酿">
+          <rect width="300" height="200" fill="#e8d4bd"/>
+          <ellipse cx="150" cy="130" rx="86" ry="42" fill="#f7efe2"/>
+          <ellipse cx="150" cy="126" rx="66" ry="30" fill="#f1dfc2"/>
+          <circle cx="130" cy="120" r="8" fill="#fff"/>
+          <circle cx="164" cy="128" r="7" fill="#fff"/>
+          <circle cx="148" cy="112" r="6" fill="#e6c27a"/>
+          <path d="M110 90 q-10 -26 6 -40 M150 86 q10 -24 -6 -38" stroke="#c9a24b" stroke-width="3" fill="none" opacity="0.7"/>
+        </svg>
+        <div class="cap">冬至夜里的一碗桂花酒酿<small>@小满厨房 · 7421喜欢</small></div>
+      </div>
+      <div class="witem wide">
+        <svg viewBox="0 0 400 200" role="img" aria-label="作品：晨雾中的山间石阶">
+          <rect width="400" height="200" fill="#c6d1d6"/>
+          <path d="M0 170 Q100 130 200 160 T400 140 L400 200 L0 200Z" fill="#8fa0a6"/>
+          <path d="M150 200 L180 120 L220 120 L250 200Z" fill="#e9eef0" opacity="0.8"/>
+          <g stroke="#7a8f96" stroke-width="3" fill="none">
+            <path d="M60 190 q20 -30 40 0 M300 185 q18 -26 36 0"/>
+          </g>
+          <circle cx="330" cy="50" r="22" fill="#fff" opacity="0.5"/>
+        </svg>
+        <div class="cap">晨雾中的山间石阶<small>@行山记 · 1.5万喜欢</small></div>
+      </div>
+      <div class="witem">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品：窗台上晒太阳的橘猫">
+          <rect width="300" height="200" fill="#f2e3cf"/>
+          <rect x="30" y="40" width="110" height="120" fill="#cfe3ec"/>
+          <path d="M30 40 L140 40 M85 40 L85 160" stroke="#a6865e" stroke-width="5"/>
+          <ellipse cx="210" cy="150" rx="52" ry="26" fill="#e0a05a"/>
+          <circle cx="248" cy="128" r="22" fill="#e8b070"/>
+          <path d="M236 112 l-4 -16 l14 8 M258 112 l4 -16 l-14 8" fill="#e8b070"/>
+          <circle cx="242" cy="128" r="3" fill="#6b4a2a"/>
+          <circle cx="256" cy="128" r="3" fill="#6b4a2a"/>
+          <path d="M60 175 q50 -14 100 0 T300 172" stroke="#d8b98f" stroke-width="4" fill="none"/>
+        </svg>
+        <div class="cap">窗台上晒太阳的橘猫<small>@猫住阁楼 · 6802喜欢</small></div>
+      </div>
+      <div class="witem">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品：旧书页里的干花标本">
+          <rect width="300" height="200" fill="#e6ddc9"/>
+          <rect x="50" y="40" width="200" height="120" rx="6" fill="#faf5ea"/>
+          <path d="M150 100 q-30 -40 -6 -52 q26 -10 6 52 M150 100 q30 -40 6 -52 q-26 -10 -6 52" stroke="#9a7b5a" stroke-width="2" fill="none"/>
+          <circle cx="150" cy="98" r="8" fill="#c9a24b" opacity="0.8"/>
+          <g stroke="#c4b49a" stroke-width="1.5">
+            <path d="M70 70 L230 70 M70 88 L200 88 M70 106 L216 106 M70 124 L190 124"/>
+          </g>
+        </svg>
+        <div class="cap">旧书页里的干花标本<small>@砚边小事 · 5134喜欢</small></div>
+      </div>
+      <div class="witem wide">
+        <svg viewBox="0 0 400 200" role="img" aria-label="作品：黄昏戏台下的糖画摊">
+          <rect width="400" height="200" fill="#e9c9a8"/>
+          <circle cx="330" cy="52" r="28" fill="#f5d98c"/>
+          <rect x="20" y="120" width="120" height="80" fill="#a66f4d"/>
+          <path d="M10 120 L80 70 L150 120" fill="#7d4f33"/>
+          <rect x="200" y="140" width="90" height="50" rx="6" fill="#f3e2c8"/>
+          <circle cx="230" cy="122" r="10" fill="#c9a24b"/>
+          <circle cx="262" cy="122" r="10" fill="#c9a24b"/>
+          <path d="M0 185 Q100 165 200 185 T400 178 L400 200 L0 200Z" fill="#a6815c" opacity="0.6"/>
+        </svg>
+        <div class="cap">黄昏戏台下的糖画摊<small>@城边闲走 · 8930喜欢</small></div>
+      </div>
+      <div class="witem">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品：手写春联的最后一个笔画">
+          <rect width="300" height="200" fill="#f7eee1"/>
+          <rect x="60" y="30" width="180" height="140" rx="4" fill="#fffaf2" stroke="#e3d2ba" stroke-width="2"/>
+          <g stroke="#b23a5b" stroke-width="6" fill="none" stroke-linecap="round">
+            <path d="M110 60 L150 60 M130 60 L130 120"/>
+            <path d="M170 60 q24 20 0 40 q-24 -20 0 -40"/>
+            <path d="M100 140 L200 140"/>
+          </g>
+          <circle cx="230" cy="150" r="10" fill="#b23a5b" opacity="0.6"/>
+        </svg>
+        <div class="cap">手写春联的最后一个笔画<small>@红纸铺子 · 4601喜欢</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 社区评价 -->
+<section class="block reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">06 / VOICES</span>
+      <h2>社区回响 · 用户真实评价</h2>
+      <p>来自不同背景的用户对小妲己官网与社区的真实感受，是我们持续运营的动力。</p>
+    </div>
+    <div class="review-grid">
+      <article class="review">
+        <p>在小妲己待了两年，最打动我的是这里没有“快剪三秒一切”的焦虑。一个做盘扣的视频能拍十七分钟，我看完了。这样的耐心，现在很少见。</p>
+        <div class="who">
+          <span class="avatar" style="background:#b23a5b;">夏</span>
+          <div><b>夏枝</b><small>手工爱好者</small></div>
+          <span class="stars">★★★★★</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>作为内容从业者，我比较挑剔。官网的专题页做得很干净，信息层级清楚，创作者档案也完整，能看出是认真在运营内容生态的团队。</p>
+        <div class="who">
+          <span class="avatar" style="background:#c9a24b;">陈</span>
+          <div><b>陈默</b><small>品牌策划</small></div>
+          <span class="stars">★★★★★</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>投稿流程比想象中顺畅，上传后有明确的审稿周期提示，通过之后还收到了版权存证说明。对于独立创作者来说，这份尊重很重要。</p>
+        <div class="who">
+          <span class="avatar" style="background:#7d9a74;">阿</span>
+          <div><b>阿禾</b><small>独立影像作者</small></div>
+          <span class="stars">★★★★☆</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>跟着顾十二的簪子教程学会了三种戴法，通勤终于不用天天扎马尾了。教学真的是三步以内，手残党友好，感谢官方把这类内容收录进专题。</p>
+        <div class="who">
+          <span class="avatar" style="background:#c4708a;">叶</span>
+          <div><b>叶知秋</b><small>社区用户</small></div>
+          <span class="stars">★★★★★</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>希望以后能多一些幕后花絮，比如拍摄设备、布光思路的分享。已经在小妲己学到不少剪辑节奏上的处理方式，值得信赖的专业内容。</p>
+        <div class="who">
+          <span class="avatar" style="background:#8a6a7a;">路</span>
+          <div><b>陆行舟</b><small>短视频创作者</small></div>
+          <span class="stars">★★★★☆</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>家里长辈看《器物有声》看得很入迷，说这些手艺他年轻时都见人做过。能让两代人一起看的内容不多，小妲己算一个，温暖又真实。</p>
+        <div class="who">
+          <span class="avatar" style="background:#a6815c;">方</span>
+          <div><b>方小满</b><small>内容观察者</small></div>
+          <span class="stars">★★★★★</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>客服回复很及时，上次咨询版权合作，第二天就收到了详细的说明文档，条款写得清楚。这份专业度在同类品牌里算行业领先了。</p>
+        <div class="who">
+          <span class="avatar" style="background:#9a828b;">林</span>
+          <div><b>林惟安</b><small>MCN 运营</small></div>
+          <span class="stars">★★★★★</span>
+        </div>
+      </article>
+      <article class="review">
+        <p>喜欢官网的影像墙，每周都会来逛一圈。有些用户作品真的惊艳，能被投票选上来，说明社区的审美和流量分配都比较健康。</p>
+        <div class="who">
+          <span class="avatar" style="background:#b23a5b;">徐</span>
+          <div><b>徐一帧</b><small>摄影爱好者</small></div>
+          <span class="stars">★★★★☆</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 动态 + FAQ -->
+<section class="block" id="updates">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">07 / UPDATES &amp; FAQ</span>
+      <h2>企业动态与常见问题</h2>
+      <p>官方发布的最新进展，以及关于内容、投稿与合作的说明。</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="news-list">
+          <div class="news">
+            <span class="date">12.08</span>
+            <div>
+              <b>「小妲己·国风新影像计划」第二季启动报名</b>
+              <span>面向全国创作者开放 120 个共创席位，官方提供拍摄场地与制作支持。</span>
+            </div>
+          </div>
+          <div class="news">
+            <span class="date">12.02</span>
+            <div>
+              <b>《器物有声》漆器篇上线，单集时长首次突破 30 分钟</b>
+              <span>完整呈现一件漆器从割漆到成器的九个月周期，官网专题页同步更新。</span>
+            </div>
+          </div>
+          <div class="news">
+            <span class="date">11.26</span>
+            <div>
+              <b>社区投稿通道升级：新增版权存证与作品投票功能</b>
+              <span>创作者上传后即可获得时间戳存证，社区用户可为喜欢的作品投票。</span>
+            </div>
+          </div>
+          <div class="news">
+            <span class="date">11.15</span>
+            <div>
+              <b>小妲己与三家文化机构达成内容合作</b>
+              <span>将在传统工艺记录、地方文化影像方向展开长期联合出品。</span>
+            </div>
+          </div>
+          <div class="news">
+            <span class="date">11.03</span>
+            <div>
+              <b>原创影像年度榜单开放投票</b>
+              <span>涵盖最佳纪录、最佳教学、最佳新人在内的六个奖项，投票截止 12 月底。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>如何在小妲己官网投稿自己的作品？</summary>
+          <p>点击页面中的“我要投稿”按钮，填写作品信息并上传成片链接或文件。官方会在七个工作日内完成初审，通过后进入内容排期并签署授权说明。所有入选作品均可获得版权存证与官方推荐位。</p>
+        </details>
+        <details>
+          <summary>平台对视频画质和时长有要求吗？</summary>
+          <p>建议分辨率不低于 1080P，横竖屏均可。纪实与教学类内容建议 8 至 30 分钟，日常记录类可控制在 1 至 5 分钟。平台统一提供高清转码与自适应播放体验。</p>
+        </details>
+        <details>
+          <summary>作品版权归谁所有？</summary>
+          <p>版权始终归创作者所有，小妲己获得的是经授权的展示与传播权利，具体范围在授权说明中明确列出。我们坚决支持原创与正版，发现侵权会通过官方渠道处理。</p>
+        </details>
+        <details>
+          <summary>如何申请成为官方签约创作者？</summary>
+          <p>在官网创作者页面提交资料，或由社区推荐。签约后可使用品牌拍摄资源、参与专题共创、获得内容运营支持与商业合作对接。签约不设排他限制，创作者可自由选择合作方式。</p>
+        </details>
+        <details>
+          <summary>品牌合作与商业项目如何联系？</summary>
+          <p>可通过下方“商务合作”按钮留下联系方式，或发送邮件至官方商务邮箱。我们会在两个工作日内回复，并提供内容定制、联合出品、品牌纪录片等合作方案。</p>
+        </details>
+        <details>
+          <summary>社区内的点赞、收藏和投票有什么区别？</summary>
+          <p>点赞表达对作品的即时喜欢，收藏用于个人留存与回看，投票则用于月度影像墙与年度榜单的评选。三者数据独立统计，共同构成内容的口碑参考。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系与投稿 -->
+<section class="block" id="contact" style="padding-top:0;">
+  <div class="wrap">
+    <div class="contact-band">
+      <div>
+        <h2>一起把好影像做下去</h2>
+        <p>无论你是创作者、品牌方还是单纯喜欢国风生活的观众，小妲己官方网站都为你留了一个位置。我们相信持续运营的品牌力量，也相信真实内容的长久价值。</p>
+      </div>
+      <div class="acts">
+        <button id="submitBtn">我要投稿 · 加入社区</button>
+        <button class="ghost" id="bizBtn">商务合作 · 联系官方</button>
+        <button class="ghost" id="shareBtn">分享品牌官网</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="logo-mark">妲</span>
+          <span class="logo-text">
+            <b>小妲己</b>
+            <small>GUOFENG IMAGE</small>
+          </span>
+        </div>
+        <p>小妲己官方网站，国风美学生活影像社区。深耕传统工艺、服饰、节气与日常记录，持续运营原创精品内容，与创作者共同成长。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容导航</h4>
+        <a href="#focus">视频焦点</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者矩阵</a>
+        <a href="#wall">社区影像墙</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于品牌</h4>
+        <a href="#updates">企业动态</a>
+        <a href="#contact">商务合作</a>
+        <a href="#contact">投稿指南</a>
+        <a href="#updates">常见问题</a>
+      </div>
+      <div class="foot-col">
+        <h4>官方联系</h4>
+        <p>商务合作：brand@xiaodaji-official.cn</p>
+        <p>内容投稿：creator@xiaodaji-official.cn</p>
+        <p>运营时间：周一至周五 10:00 - 18:30</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 小妲己影像文化传媒有限公司 · 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号占位：京ICP备 - 待补充</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" aria-label="回到顶部">↑</button>
+<div id="toast"></div>
+
+<!-- 通用弹窗 -->
+<div class="modal-mask" id="modalMask">
+  <div class="modal" id="modalBox">
+    <h3 id="modalTitle">提示</h3>
+    <div class="mbody" id="modalBody"></div>
+    <button class="mclose" id="modalClose">知道了</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  var headerTools = document.getElementById('headerTools');
+  menuToggle.addEventListener('click', function(){
+    mainNav.classList.toggle('open');
+    headerTools.classList.toggle('open');
+  });
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.innerWidth <= 760){
+        mainNav.classList.remove('open');
+        headerTools.classList.remove('open');
+      }
+    });
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchHint = document.getElementById('searchHint');
+  var searchData = [
+    {k:'一针一线里的东方衣冠之美', t:'焦点视频 · 传统服饰'},
+    {k:'器物有声', t:'专题企划 · 更新中'},
+    {k:'苏绛工作室', t:'创作者 · 传统服饰'},
+    {k:'林间茶事', t:'创作者 · 节气生活'},
+    {k:'一帧暖意', t:'冬日影像征集'},
+    {k:'城市里的东方角落', t:'专题企划 · 已完结'},
+    {k:'拾光造屋', t:'创作者 · 老宅改造'},
+    {k:'顾十二', t:'创作者 · 东方发饰'},
+    {k:'投稿指南', t:'帮助 · 常见问题'}
+  ];
+  function runSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.innerHTML = '<span style="color:#b9a3aa">试试搜索：器物、簪子、老宅、节气</span>';
+      searchHint.classList.add('show');
+      return;
+    }
+    var hits = searchData.filter(function(d){ return d.k.indexOf(q) > -1 || d.t.indexOf(q) > -1; });
+    if(hits.length){
+      searchHint.innerHTML = '找到 <b>' + hits.length + '</b> 条相关内容：<br>' +
+        hits.map(function(d){ return '· <b>' + d.k + '</b> <span style="color:#9a828b">（' + d.t + '）</span>'; }).join('<br>');
+      toast('已为你找到 ' + hits.length + ' 条相关内容');
+    } else {
+      searchHint.innerHTML = '暂未找到“<b>' + q + '</b>”相关结果，可尝试“器物”“簪子”“老宅”“节气”等关键词。';
+    }
+    searchHint.classList.add('show');
+  }
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter') runSearch(); });
+  searchInput.addEventListener('focus', function(){
+    if(!searchHint.classList.contains('show') && !searchInput.value.trim()){
+      searchHint.innerHTML = '<span style="color:#b9a3aa">试试搜索：器物、簪子、老宅、节气</span>';
+      searchHint.classList.add('show');
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search-box')) searchHint.classList.remove('show');
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('.like-btn').forEach(function(btn){
+    btn.dataset.liked = '0';
+    btn.addEventListener('click', function(){
+      var base = parseInt(btn.dataset.base, 10) || 0;
+      if(btn.dataset.liked === '0'){
+        btn.dataset.liked = '1';
+        btn.classList.add('liked');
+        var n = base + 1;
+        btn.textContent = '♥ ' + (n >= 1000 ? (n/1000).toFixed(1) + 'k' : n);
+        toast('已点赞，感谢你的喜欢');
+      } else {
+        btn.dataset.liked = '0';
+        btn.classList.remove('liked');
+        btn.textContent = '♡ ' + (base >= 1000 ? (base/1000).toFixed(1) + 'k' : base);
+      }
+    });
+  });
+  document.querySelectorAll('.save-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('saved');
+      btn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      toast(on ? '已加入收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 弹窗工具 ---------- */
+  var modalMask = document.getElementById('modalMask');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalBody = document.getElementById('modalBody');
+  var modalClose = document.getElementById('modalClose');
+  function openModal(title, html){
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modalMask.classList.add('show');
+  }
+  function closeModal(){ modalMask.classList.remove('show'); }
+  modalClose.addEventListener('click', closeModal);
+  modalMask.addEventListener('click', function(e){ if(e.target === modalMask) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* ---------- 作者信息弹窗 ---------- */
+  document.querySelectorAll('.author-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn.dataset.name,
+        '<p>' + btn.dataset.desc + '</p>' +
+        '<p style="margin-top:12px;color:#b23a5b;font-weight:600;">小妲己官方认证创作者 · 内容持续更新中</p>');
+    });
+  });
+
+  /* ---------- 联系与分享 ---------- */
+  document.getElementById('submitBtn').addEventListener('click', function(){
+    openModal('投稿入口',
+      '<p>小妲己社区长期开放投稿，欢迎原创影像作品。</p>' +
+      '<p style="margin-top:10px;">投稿邮箱：<b>creator@xiaodaji-official.cn</b></p>' +
+      '<p>请附上作品链接、创作简介与联系方式，官方将在七个工作日内回复初审结果。入选作品可获得版权存证与官方推荐位。</p>');
+  });
+  document.getElementById('bizBtn').addEventListener('click', function(){
+    openModal('商务合作',
+      '<p>我们提供内容定制、联合出品、品牌纪录片、专题共创等合作方式。</p>' +
+      '<p style="margin-top:10px;">商务邮箱：<b>brand@xiaodaji-official.cn</b></p>' +
+      '<p>合作请在邮件中说明品牌背景、项目周期与预算范围，两个工作日内会有专人对接。</p>');
+  });
+  document.getElementById('shareBtn').addEventListener('click', function(){
+    openModal('分享品牌官网',
+      '<p>把这份东方光影分享给同样热爱生活的人。</p>' +
+      '<div class="share-row">' +
+        '<button data-share="微信">微信</button>' +
+        '<button data-share="微博">微博</button>' +
+        '<button data-share="QQ">QQ</button>' +
+        '<button data-share="复制链接">复制链接</button>' +
+      '</div>');
+    setTimeout(function(){
+      modalBody.querySelectorAll('[data-share]').forEach(function(b){
+        b.addEventListener('click', function(){
+          var way = b.dataset.share;
+          if(way === '复制链接'){
+            var link = 'https://www.xiaodaji-official.cn';
+            if(navigator.clipboard && navigator.clipboard.writeText){
+              navigator.clipboard.writeText(link).then(function(){
+                toast('链接已复制到剪贴板');
+              }).catch(function(){
+                toast('复制失败，请手动复制');
+              });
+            } else {
+              var ta = document.createElement('textarea');
+              ta.value = link;
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); toast('链接已复制到剪贴板'); }
+              catch(err){ toast('复制失败，请手动复制'); }
+              document.body.removeChild(ta);
+            }
+          } else {
+            toast('已生成' + way + '分享提示');
+          }
+        });
+      });
+    }, 30);
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480) backTop.classList.add('show');
+    else backTop.classList.remove('show');
+  });
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function countUp(){
+    if(counted) return;
+    var sec = document.querySelector('.hero');
+    if(!sec) return;
+    var rect = sec.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      counted = true;
+      document.querySelectorAll('.stat b[data-count]').forEach(function(el){
+        var target = parseInt(el.dataset.count, 10);
+        var suffix = el.querySelector('i') ? el.querySelector('i').outerHTML : '';
+        var cur = 0;
+        var step = Math.max(1, Math.ceil(target / 60));
+        var timer = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.innerHTML = cur + suffix;
+        }, 22);
+      });
+    }
+  }
+  window.addEventListener('scroll', countUp);
+  window.addEventListener('load', countUp);
+})();
+</script>
+</body>
+              </html>
