@@ -1,0 +1,1427 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yandex网页 - 搜索技术影像平台 - 连接信息与创作者</title>
+<meta name="description" content="Yandex网页官方网站，专注搜索技术创新与网络内容生态的视频品牌平台，持续运营中，为创作者与企业搭建高品质内容社区。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d1117;
+  --panel:#161b22;
+  --panel2:#1c2330;
+  --line:#2a3342;
+  --txt:#e6edf3;
+  --txt2:#9aa8b8;
+  --accent:#f5b800;
+  --accent2:#4aa8ff;
+  --red:#ff4a5e;
+  --green:#3fd18b;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+
+/* ===== 吸顶组合 ===== */
+.sticky-group{
+  position:sticky;top:0;z-index:900;
+}
+.notice-bar{
+  background:linear-gradient(90deg,#f5b800,#ffd64a 60%,#f5b800);
+  color:#1a1200;
+  font-size:13px;
+  font-weight:600;
+  padding:8px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.notice-bar .tag{
+  background:#1a1200;color:#f5b800;
+  border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;letter-spacing:.5px;flex:0 0 auto;
+}
+.notice-bar .notice-track{
+  display:flex;gap:36px;
+  animation:noticeScroll 26s linear infinite;
+}
+.notice-bar:hover .notice-track{animation-play-state:paused}
+@keyframes noticeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+header.site-head{
+  background:rgba(13,17,23,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:26px;
+  padding:12px 22px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-size:20px;font-weight:800;letter-spacing:.3px;flex:0 0 auto;
+}
+.logo .mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#f5b800,#ff7a00);
+  color:#14100a;display:grid;place-items:center;
+  font-size:18px;font-weight:900;box-shadow:0 4px 14px rgba(245,184,0,.35);
+}
+.logo small{display:block;font-size:10px;font-weight:500;color:var(--txt2);letter-spacing:2px}
+nav.main-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+nav.main-nav a{
+  padding:7px 12px;border-radius:9px;font-size:14px;color:var(--txt2);
+  transition:.2s;white-space:nowrap;
+}
+nav.main-nav a:hover{background:var(--panel2);color:var(--txt)}
+nav.main-nav a.active{color:var(--accent);background:rgba(245,184,0,.1)}
+.head-right{display:flex;align-items:center;gap:12px;margin-left:auto}
+.search-box{
+  display:flex;align-items:center;
+  background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;padding:6px 10px;gap:8px;
+  transition:.2s;
+}
+.search-box:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,184,0,.12)}
+.search-box input{
+  background:none;border:none;outline:none;color:var(--txt);
+  font-size:13px;width:150px;
+}
+.search-box input::placeholder{color:#5d6b7c}
+.search-box button{color:var(--accent);font-size:15px;line-height:1}
+.btn-primary{
+  background:linear-gradient(135deg,#f5b800,#ff8a00);
+  color:#14100a;font-weight:700;font-size:13px;
+  padding:9px 18px;border-radius:10px;
+  box-shadow:0 4px 14px rgba(245,184,0,.28);
+  transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,184,0,.4)}
+.btn-ghost{
+  border:1px solid var(--line);color:var(--txt);
+  font-size:13px;font-weight:600;padding:8px 16px;border-radius:10px;
+  background:var(--panel);transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hamburger{display:none;font-size:22px;color:var(--txt);padding:4px 8px}
+
+/* ===== 通用容器 ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 22px}
+section{padding:62px 0;scroll-margin-top:110px}
+.section-head{margin-bottom:34px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.section-head h2{font-size:28px;letter-spacing:.5px;position:relative;padding-left:16px}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;border-radius:3px;
+  background:linear-gradient(180deg,#f5b800,#ff6a00);
+}
+.section-head .sub{color:var(--txt2);font-size:14px;max-width:560px}
+.eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
+  color:var(--accent);border:1px solid rgba(245,184,0,.4);
+  padding:3px 10px;border-radius:20px;margin-bottom:14px;
+}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 82% -10%,rgba(245,184,0,.16),transparent 60%),
+    radial-gradient(700px 380px at 8% 110%,rgba(74,168,255,.12),transparent 60%),
+    var(--bg);
+}
+.hero-grid{
+  max-width:1200px;margin:0 auto;padding:56px 22px 64px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+}
+.hero h1{
+  font-size:clamp(34px,4.4vw,52px);
+  line-height:1.14;letter-spacing:1px;margin-bottom:18px;
+  background:linear-gradient(120deg,#ffffff 30%,#ffd76a 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{color:var(--txt2);font-size:15.5px;margin-bottom:22px;max-width:540px}
+.hero .intro{font-size:14px;color:#b3c0cf;border-left:3px solid var(--accent);padding-left:16px;margin-bottom:28px;max-width:560px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.stats{display:flex;gap:34px;flex-wrap:wrap}
+.stat b{font-size:26px;color:var(--accent);font-family:Georgia,serif}
+.stat span{display:block;font-size:12.5px;color:var(--txt2);margin-top:2px}
+.hero-visual{position:relative}
+.hero-card{
+  border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+  transform:rotate(-1.2deg);
+}
+.hero-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.hero-badge{
+  position:absolute;bottom:-16px;left:-14px;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:12px 16px;font-size:12.5px;color:var(--txt2);
+  box-shadow:0 16px 34px rgba(0,0,0,.5);backdrop-filter:blur(8px);
+}
+.hero-badge b{color:var(--green);font-size:16px;display:block}
+.hero-float{
+  position:absolute;top:-18px;right:-10px;
+  background:#f5b800;color:#14100a;font-weight:800;font-size:12px;
+  padding:7px 14px;border-radius:20px;letter-spacing:1px;
+  box-shadow:0 10px 24px rgba(245,184,0,.35);transform:rotate(3deg);
+}
+
+/* ===== 焦点内容 ===== */
+.focus-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.vcard{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.25s;position:relative;display:flex;flex-direction:column;
+}
+.vcard:hover{transform:translateY(-4px);border-color:#3a475a;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.vcard .thumb{position:relative;overflow:hidden}
+.vcard .thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.4s}
+.vcard:hover .thumb img{transform:scale(1.05)}
+.play-ic{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%);
+}
+.play-ic::after{
+  content:"";width:0;height:0;
+  border-left:16px solid rgba(255,255,255,.92);
+  border-top:10px solid transparent;border-bottom:10px solid transparent;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.6));
+}
+.vtag{
+  position:absolute;top:10px;left:10px;
+  background:rgba(13,17,23,.78);color:var(--accent);
+  font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;
+  border:1px solid rgba(245,184,0,.35);backdrop-filter:blur(4px);
+}
+.dur{
+  position:absolute;bottom:10px;right:10px;
+  background:rgba(0,0,0,.7);font-size:11px;padding:2px 7px;border-radius:5px;color:#dfe7ef;
+}
+.vbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.vbody h3{font-size:15.5px;line-height:1.45}
+.vbody p{font-size:12.8px;color:var(--txt2);line-height:1.6}
+.vmeta{display:flex;align-items:center;gap:8px;font-size:12px;color:#7d8b9c;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+.vmeta .avatar{width:20px;height:20px;border-radius:50%;flex:0 0 auto}
+.vmeta .dot{color:#3c4858}
+.vops{display:flex;gap:6px;margin-top:8px;border-top:1px dashed var(--line);padding-top:9px}
+.vops button{
+  font-size:12px;color:var(--txt2);border-radius:7px;padding:4px 9px;
+  display:flex;align-items:center;gap:4px;transition:.2s;
+}
+.vops button:hover{background:var(--panel2);color:var(--accent)}
+.vops button.liked{color:var(--red)}
+.vops button.saved{color:var(--accent)}
+.focus-main{grid-row:span 2}
+.focus-main .thumb img{aspect-ratio:16/10}
+.focus-main h3{font-size:20px}
+
+/* ===== 热门视频流 ===== */
+.stream-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* ===== 专题 ===== */
+.topic-list{display:flex;flex-direction:column;gap:14px}
+.topic{
+  display:grid;grid-template-columns:180px 1fr auto;gap:20px;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;transition:.25s;
+}
+.topic:hover{border-color:rgba(245,184,0,.45);background:var(--panel2)}
+.topic img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
+.topic h3{font-size:17px;margin-bottom:5px}
+.topic p{font-size:13px;color:var(--txt2)}
+.topic .status{
+  font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;white-space:nowrap;
+  border:1px solid rgba(63,209,139,.4);color:var(--green);background:rgba(63,209,139,.08);
+}
+.topic .status.on{border-color:rgba(245,184,0,.4);color:var(--accent);background:rgba(245,184,0,.08)}
+
+/* ===== 创作者 ===== */
+.creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.creator{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.25s;cursor:pointer;
+}
+.creator:hover{transform:translateY(-4px);border-color:#3a475a;box-shadow:0 18px 36px rgba(0,0,0,.4)}
+.creator-top{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.creator-top .av{
+  width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+  font-size:22px;font-weight:800;color:#14100a;flex:0 0 auto;
+}
+.creator-top h3{font-size:16px;margin-bottom:2px}
+.creator-top span{font-size:12px;color:var(--accent)}
+.creator p{font-size:13px;color:var(--txt2);min-height:56px}
+.creator-foot{display:flex;justify-content:space-between;font-size:12px;color:#7d8b9c;border-top:1px dashed var(--line);margin-top:12px;padding-top:10px}
+.creator-foot b{color:var(--txt);font-size:14px}
+
+/* ===== 故事随笔 ===== */
+.story-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.story{
+  background:linear-gradient(160deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  position:relative;overflow:hidden;
+}
+.story::before{
+  content:"“";position:absolute;top:-14px;right:12px;font-size:76px;
+  color:rgba(245,184,0,.14);font-family:Georgia,serif;
+}
+.story .date{font-size:12px;color:var(--accent);letter-spacing:1px;margin-bottom:9px;font-weight:700}
+.story h3{font-size:17px;margin-bottom:10px;line-height:1.45}
+.story p{font-size:13.4px;color:var(--txt2)}
+
+/* ===== 影像墙 ===== */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+.wall figure{
+  position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);
+  transition:.3s;
+}
+.wall figure:hover{transform:scale(1.02);border-color:rgba(245,184,0,.5);z-index:2}
+.wall img{width:100%;height:100%;object-fit:cover}
+.wall figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  padding:22px 12px 10px;font-size:12.5px;color:#e8eef4;font-weight:600;
+}
+.wall .large{grid-column:span 2;grid-row:span 2}
+.wall .tall{grid-row:span 2}
+.wall .wide{grid-column:span 2}
+
+/* ===== 评价 ===== */
+.review-flow{columns:3;column-gap:18px}
+.review{
+  break-inside:avoid;margin-bottom:18px;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:18px;transition:.2s;
+}
+.review:hover{border-color:#3a475a}
+.review .who{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.review .who .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;color:#14100a}
+.review .who b{font-size:13.5px}
+.review .who span{font-size:11px;color:#6d7b8c}
+.review p{font-size:13.3px;color:#b9c5d3}
+.review .stars{color:var(--accent);font-size:12px;margin-top:8px;letter-spacing:2px}
+
+/* ===== 榜单 & 灵感 ===== */
+.rank-idea{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.panel-box h3{font-size:18px;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.panel-box h3 .ico{
+  width:26px;height:26px;border-radius:8px;background:rgba(245,184,0,.15);
+  color:var(--accent);display:grid;place-items:center;font-size:14px;font-weight:800;
+}
+.rank-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.6px}
+.rank-item:last-child{border:none}
+.rank-item .no{width:22px;font-weight:800;font-family:Georgia,serif;color:var(--txt2);font-size:15px}
+.rank-item:nth-child(1) .no,.rank-item:nth-child(2) .no,.rank-item:nth-child(3) .no{color:var(--accent)}
+.rank-item .heat{margin-left:auto;font-size:12px;color:#6d7b8c;white-space:nowrap}
+.idea-item{padding:11px 0;border-bottom:1px dashed var(--line);font-size:13.6px;display:flex;gap:10px}
+.idea-item:last-child{border:none}
+.idea-item .k{
+  flex:0 0 auto;font-size:11px;font-weight:700;color:var(--accent2);
+  border:1px solid rgba(74,168,255,.35);border-radius:5px;padding:1px 7px;height:fit-content;margin-top:2px;
+}
+
+/* ===== 动态 & FAQ ===== */
+.dyn-faq{display:grid;grid-template-columns:1fr 1.15fr;gap:26px}
+.dyn-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.dyn-item:last-child{border:none}
+.dyn-item .d{flex:0 0 62px;font-size:12px;color:var(--accent);font-weight:700;line-height:1.5}
+.dyn-item h4{font-size:14px;margin-bottom:3px;font-weight:700}
+.dyn-item p{font-size:12.8px;color:var(--txt2)}
+details.faq{
+  background:var(--panel);border:1px solid var(--line);border-radius:11px;
+  margin-bottom:10px;overflow:hidden;transition:.2s;
+}
+details.faq[open]{border-color:rgba(245,184,0,.4)}
+details.faq summary{
+  list-style:none;cursor:pointer;padding:13px 18px;font-size:14px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:18px;color:var(--accent);transition:.2s}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .ans{padding:0 18px 15px;font-size:13.2px;color:var(--txt2);line-height:1.75}
+
+/* ===== 联系 ===== */
+.contact-box{
+  background:
+    radial-gradient(600px 240px at 80% 0%,rgba(245,184,0,.14),transparent 65%),
+    var(--panel);
+  border:1px solid var(--line);border-radius:20px;padding:42px;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;
+}
+.contact-box h2{font-size:26px;margin-bottom:12px}
+.contact-box p{font-size:14px;color:var(--txt2);margin-bottom:20px}
+.contact-act{display:flex;gap:12px;flex-wrap:wrap}
+.contact-info{display:flex;flex-direction:column;gap:12px;font-size:13.5px}
+.contact-info div{display:flex;gap:10px;align-items:center;color:#b9c5d3}
+.contact-info div span{color:var(--accent);font-weight:700}
+
+/* ===== 页脚 ===== */
+footer.site-foot{
+  border-top:1px solid var(--line);background:#0a0e14;padding:48px 0 30px;margin-top:20px;
+}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.foot-brand .logo{margin-bottom:14px}
+.foot-brand p{font-size:13px;color:var(--txt2);max-width:320px}
+.foot-col h4{font-size:13.5px;margin-bottom:12px;color:var(--txt);letter-spacing:.5px}
+.foot-col a{display:block;font-size:13px;color:var(--txt2);padding:4px 0;transition:.2s}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{
+  max-width:1200px;margin:34px auto 0;padding:18px 22px 0;
+  border-top:1px solid var(--line);font-size:12.5px;color:#6d7b8c;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ===== 回到顶部 & toast ===== */
+#toTop{
+  position:fixed;right:24px;bottom:26px;z-index:800;
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,#f5b800,#ff8a00);color:#14100a;
+  font-size:20px;font-weight:800;display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(245,184,0,.4);
+  opacity:0;pointer-events:none;transition:.25s;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-3px)}
+#toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);
+  background:#1f2937;color:#e6edf3;border:1px solid #374151;
+  padding:11px 22px;border-radius:10px;font-size:13.5px;z-index:1100;
+  opacity:0;pointer-events:none;transition:.28s;box-shadow:0 12px 30px rgba(0,0,0,.5);
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* 弹窗 */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(4,7,12,.72);backdrop-filter:blur(5px);
+  display:none;place-items:center;z-index:1000;padding:20px;
+}
+.modal-mask.show{display:grid}
+.modal{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  width:100%;max-width:480px;padding:28px;position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,.6);
+  max-height:86vh;overflow:auto;
+}
+.modal h3{font-size:19px;margin-bottom:16px}
+.modal .close{position:absolute;top:14px;right:16px;font-size:20px;color:var(--txt2)}
+.modal .close:hover{color:var(--accent)}
+.modal label{display:block;font-size:12.5px;color:var(--txt2);margin:12px 0 5px}
+.modal input,.modal textarea,.modal select{
+  width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:9px;
+  padding:10px 12px;color:var(--txt);font-size:13.5px;outline:none;
+}
+.modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--accent)}
+.modal textarea{resize:vertical;min-height:88px}
+.modal .actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
+.share-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.share-row button{
+  background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+  padding:14px 8px;font-size:13px;transition:.2s;
+}
+.share-row button:hover{border-color:var(--accent);color:var(--accent)}
+.comment-item{font-size:13.4px;padding:10px 0;border-bottom:1px dashed var(--line);color:#b9c5d3}
+.comment-item b{color:var(--txt)}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .focus-grid{grid-template-columns:1fr 1fr}
+  .focus-main{grid-column:span 2;grid-row:auto}
+  .stream-grid,.creator-grid,.story-wrap{grid-template-columns:repeat(2,1fr)}
+  .review-flow{columns:2}
+  .rank-idea,.dyn-faq,.contact-box{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .wall{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:720px){
+  nav.main-nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--panel);border-bottom:1px solid var(--line);
+    flex-direction:column;padding:12px 18px;gap:2px;
+    box-shadow:0 20px 30px rgba(0,0,0,.4);
+  }
+  nav.main-nav.open{display:flex}
+  .head-inner{position:relative;flex-wrap:wrap}
+  .hamburger{display:block;order:3}
+  .head-right{order:4;width:100%;margin:8px 0 0}
+  .search-box{flex:1}
+  .search-box input{width:100%}
+  .head-right .btn-primary{display:none}
+  .focus-grid,.stream-grid,.creator-grid,.story-wrap{grid-template-columns:1fr}
+  .focus-main{grid-column:auto}
+  .review-flow{columns:1}
+  .topic{grid-template-columns:110px 1fr;gap:12px}
+  .topic .status{grid-column:2;justify-self:start}
+  .wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+  .wall .large{grid-column:span 2}
+  .contact-box{padding:26px}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:46px 0}
+  .section-head h2{font-size:23px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-group">
+  <div class="notice-bar">
+    <span class="tag">最新</span>
+    <div class="notice-track">
+      <span>【官方发布】“搜索的下一站”年度主题企划上线，首支纪录影像已更新</span>
+      <span>【比赛报名】Yandex网页 2024 网络影像挑战赛开放报名，7 月 20 日截止</span>
+      <span>【内容更新】创作者学院新增 6 期剪辑攻略，支持高清下载学习</span>
+      <span>【企业动态】平台通过内容生态质量评估，连续三年获评值得信赖品牌</span>
+      <span>【官方发布】“搜索的下一站”年度主题企划上线，首支纪录影像已更新</span>
+      <span>【比赛报名】Yandex网页 2024 网络影像挑战赛开放报名，7 月 20 日截止</span>
+      <span>【内容更新】创作者学院新增 6 期剪辑攻略，支持高清下载学习</span>
+      <span>【企业动态】平台通过内容生态质量评估，连续三年获评值得信赖品牌</span>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="logo" href="#home">
+        <span class="mark">Y</span>
+        <span>Yandex网页<small>SEARCH &amp; VISION</small></span>
+      </a>
+      <button class="hamburger" id="menuBtn" aria-label="展开菜单">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="active">首页</a>
+        <a href="#focus">焦点影像</a>
+        <a href="#stream">热门内容</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#updates">企业动态</a>
+        <a href="#faq">帮助</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="head-right">
+        <div class="search-box">
+          <input id="searchInput" type="text" placeholder="搜索内容 / 创作者 / 专题" aria-label="站内搜索">
+          <button id="searchBtn" aria-label="搜索">⌕</button>
+        </div>
+        <button class="btn-primary" data-open="submit">投稿入口</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ===== 首屏 ===== -->
+<section class="hero" id="home" style="padding:0">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">YANDEX · 官方网站</span>
+      <h1>Yandex网页<em>·</em>让信息变成有温度的影像</h1>
+      <p class="lead">一个专注搜索技术、网络文化与创作者表达的视频品牌平台。我们用镜头记录信息如何流动，也记录人们如何在其中找到答案。</p>
+      <p class="intro">作为国内领先的搜索技术内容品牌，Yandex网页官方网站致力于为创作者与企业搭建高品质内容生态。自 2016 年持续运营至今，平台以专业影像、深度访谈与实用教程为核心，深耕搜索与网络信息这一垂直领域，用真实、温暖的表达连接每一次搜索背后的故事。</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#focus">查看焦点影像</a>
+        <a class="btn-ghost" href="#creators">认识创作者</a>
+        <button class="btn-ghost" data-open="share">分享品牌页</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2,860+</b><span>原创影像作品</span></div>
+        <div class="stat"><b>1,240,000</b><span>社区创作者与关注者</span></div>
+        <div class="stat"><b>8 年</b><span>持续运营与品质积累</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="hero-float">官方出品 · 高清</span>
+      <div class="hero-card">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2318202e'/%3E%3Cstop offset='1' stop-color='%230b0f16'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f5b800'/%3E%3Cstop offset='1' stop-color='%23ff6a00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Cg opacity='.5' stroke='%232a3342' stroke-width='1'%3E%3Cpath d='M0 120 H800 M0 240 H800 M0 360 H800 M160 0 V500 M320 0 V500 M480 0 V500 M640 0 V500'/%3E%3C/g%3E%3Ccircle cx='560' cy='220' r='120' fill='none' stroke='url(%23g2)' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='560' cy='220' r='72' fill='none' stroke='%23f5b800' stroke-width='2' opacity='.55'/%3E%3Cpath d='M520 200 l70 20 -70 20 z' fill='%23f5b800'/%3E%3Crect x='70' y='150' width='250' height='16' rx='8' fill='%23344456'/%3E%3Crect x='70' y='185' width='190' height='12' rx='6' fill='%232a3342'/%3E%3Crect x='70' y='215' width='220' height='12' rx='6' fill='%232a3342'/%3E%3Crect x='70' y='290' width='120' height='34' rx='8' fill='url(%23g2)'/%3E%3Crect x='70' y='350' width='300' height='10' rx='5' fill='%232a3342'/%3E%3Crect x='70' y='375' width='240' height='10' rx='5' fill='%232a3342'/%3E%3C/svg%3E" alt="Yandex网页品牌主视觉：搜索网格与影像播放标识">
+      </div>
+      <div class="hero-badge">
+        <b>今日更新</b>
+        3 支原创影像 · 2 篇创作者手记
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 焦点内容 ===== -->
+<section id="focus">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">FOCUS · 焦点</span>
+        <h2>焦点影像 · 编辑精选</h2>
+      </div>
+      <p class="sub">由官方编辑部每周筛选的高品质内容，覆盖搜索技术、网络文化与创作者幕后，代表平台对精品内容的判断与坚持。</p>
+    </div>
+    <div class="focus-grid">
+      <article class="vcard focus-main">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a00'/%3E%3Cstop offset='1' stop-color='%23b14a00'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23000000' stop-opacity='.65'/%3E%3Cstop offset='1' stop-color='%23000000' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23a)'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2'%3E%3Ccircle cx='250' cy='250' r='160'/%3E%3Ccircle cx='250' cy='250' r='100'/%3E%3Ccircle cx='250' cy='250' r='40'/%3E%3C/g%3E%3Crect x='470' y='140' width='240' height='140' rx='10' fill='%23fff' opacity='.14'/%3E%3Crect x='470' y='310' width='180' height='14' rx='7' fill='%23fff' opacity='.5'/%3E%3Crect x='470' y='342' width='220' height='14' rx='7' fill='%23fff' opacity='.32'/%3E%3Crect width='800' height='500' fill='url(%23b)'/%3E%3C/svg%3E" alt="焦点影像《一次搜索的完整旅程》封面：同心圆搜索波纹与信息卡片">
+          <span class="vtag">深度纪录</span>
+          <span class="dur">18:42</span>
+          <span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>一次搜索的完整旅程：从输入框到答案落地</h3>
+          <p>跟随镜头走进信息检索的幕后：关键词如何被理解、结果如何被排序、一条回答又是怎样被反复校验。三位工程师与两位内容编辑共同讲述「让信息更准确」这件事背后的耐心与取舍。</p>
+          <div class="vmeta">
+            <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23f5b800'/%3E%3Ctext x='20' y='26' font-size='17' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23141000'%3E%E7%BD%91%3C/text%3E%3C/svg%3E" alt="官方编辑部头像">
+            <span>官方编辑部</span><span class="dot">·</span><span>2024-06-18</span><span class="dot">·</span><span>12.6 万次播放</span>
+          </div>
+          <div class="vops">
+            <button data-like>♡ <span>1,286</span></button>
+            <button data-save>☆ 收藏</button>
+            <button data-open="comment">💬 评论</button>
+            <button data-copy>⧉ 复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23131b2b'/%3E%3Cstop offset='1' stop-color='%232b4a7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c1)'/%3E%3Cg stroke='%234aa8ff' stroke-width='2' fill='none' opacity='.75'%3E%3Cpath d='M60 300 L180 190 L300 240 L420 120 L560 170'/%3E%3Ccircle cx='420' cy='120' r='8' fill='%234aa8ff'/%3E%3Ccircle cx='180' cy='190' r='6' fill='%234aa8ff'/%3E%3C/g%3E%3Crect x='60' y='60' width='140' height='12' rx='6' fill='%23fff' opacity='.35'/%3E%3Crect x='60' y='84' width='90' height='10' rx='5' fill='%23fff' opacity='.2'/%3E%3C/svg%3E" alt="《搜索算法公开课》封面：折线数据图与蓝色信息曲线">
+          <span class="vtag">教程干货</span>
+          <span class="dur">11:05</span>
+          <span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>搜索算法公开课 01：相关性是如何被定义的</h3>
+          <p>用一张白板、三支马克笔，把抽象的排序逻辑拆开到能听懂。适合内容运营与产品新人。</p>
+          <div class="vmeta">
+            <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%234aa8ff'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23081218'%3E%E9%99%88%3C/text%3E%3C/svg%3E" alt="创作者陈隽头像">
+            <span>陈隽</span><span class="dot">·</span><span>8.3 万次播放</span>
+          </div>
+          <div class="vops">
+            <button data-like>♡ <span>864</span></button>
+            <button data-save>☆ 收藏</button>
+            <button data-copy>⧉ 复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23302a3f'/%3E%3Cstop offset='1' stop-color='%23a8875f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c2)'/%3E%3Cg fill='%23fff' opacity='.85'%3E%3Crect x='90' y='120' width='120' height='150' rx='8'/%3E%3Crect x='240' y='90' width='120' height='180' rx='8'/%3E%3Crect x='390' y='150' width='120' height='120' rx='8'/%3E%3C/g%3E%3Cg fill='%23302a3f' opacity='.55'%3E%3Crect x='108' y='150' width='84' height='10' rx='5'/%3E%3Crect x='108' y='172' width='60' height='10' rx='5'/%3E%3Crect x='258' y='120' width='84' height='10' rx='5'/%3E%3Crect x='258' y='142' width='66' height='10' rx='5'/%3E%3Crect x='408' y='180' width='84' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E" alt="《信息卡片设计》封面：三块米色信息卡片版式">
+          <span class="vtag">艺术美学</span>
+          <span class="dur">07:30</span>
+          <span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>信息卡片设计：把复杂答案讲成一眼看懂</h3>
+          <p>从版式、留白到色彩，聊聊搜索结果页里的视觉秩序，为什么好设计能让信息更可信。</p>
+          <div class="vmeta">
+            <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23c9a26d'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23201710'%3E%E6%9E%97%3C/text%3E%3C/svg%3E" alt="创作者林知夏头像">
+            <span>林知夏</span><span class="dot">·</span><span>6.1 万次播放</span>
+          </div>
+          <div class="vops">
+            <button data-like>♡ <span>592</span></button>
+            <button data-save>☆ 收藏</button>
+            <button data-copy>⧉ 复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230d3b2e'/%3E%3Cstop offset='1' stop-color='%23152a22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c3)'/%3E%3Cg stroke='%233fd18b' fill='none' stroke-width='2' opacity='.8'%3E%3Cpath d='M80 280 Q180 120 300 220 T560 100'/%3E%3C/g%3E%3Ccircle cx='300' cy='220' r='26' fill='none' stroke='%233fd18b' stroke-width='2'/%3E%3Ccircle cx='300' cy='220' r='9' fill='%233fd18b'/%3E%3Crect x='80' y='60' width='170' height='12' rx='6' fill='%233fd18b' opacity='.5'/%3E%3Crect x='80' y='86' width='120' height='10' rx='5' fill='%233fd18b' opacity='.3'/%3E%3C/svg%3E" alt="《城市信息地图》封面：绿色路线与定位节点">
+          <span class="vtag">城市探索</span>
+          <span class="dur">14:12</span>
+          <span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>城市信息地图：在街巷里寻找被忽略的答案</h3>
+          <p>走访三家老书店与一家社区档案馆，看看线下世界如何回应线上搜索不到的问题。</p>
+          <div class="vmeta">
+            <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%233fd18b'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23081612'%3E%E5%91%A8%3C/text%3E%3C/svg%3E" alt="创作者周野头像">
+            <span>周野</span><span class="dot">·</span><span>9.4 万次播放</span>
+          </div>
+          <div class="vops">
+            <button data-like>♡ <span>1,037</span></button>
+            <button data-save>☆ 收藏</button>
+            <button data-copy>⧉ 复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2e6d8'/%3E%3Cstop offset='1' stop-color='%23d9b38c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c4)'/%3E%3Crect x='0' y='240' width='640' height='120' fill='%23b98a5c' opacity='.35'/%3E%3Ccircle cx='500' cy='90' r='46' fill='%23ffd28a'/%3E%3Cg stroke='%236b4a2f' stroke-width='3' fill='none' opacity='.7'%3E%3Crect x='120' y='120' width='150' height='110' rx='8'/%3E%3Cpath d='M120 170 H270'/%3E%3C/g%3E%3Crect x='120' y='260' width='220' height='12' rx='6' fill='%236b4a2f' opacity='.5'/%3E%3Crect x='120' y='288' width='160' height='12' rx='6' fill='%236b4a2f' opacity='.3'/%3E%3C/svg%3E" alt="《老物件与信息》封面：暖色窗台与旧式收音机">
+          <span class="vtag">人物访谈</span>
+          <span class="dur">09:58</span>
+          <span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>老物件与信息：一位资料整理员的三十年</h3>
+          <p>在没有搜索引擎的年代，她靠一柜子卡片记录整座城市的变迁。如今，她把卡片交给了数字化。</p>
+          <div class="vmeta">
+            <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d9b38c'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23402a16'%3E%E8%8B%8F%3C/text%3E%3C/svg%3E" alt="创作者苏禾头像">
+            <span>苏禾</span><span class="dot">·</span><span>5.7 万次播放</span>
+          </div>
+          <div class="vops">
+            <button data-like>♡ <span>731</span></button>
+            <button data-save>☆ 收藏</button>
+            <button data-copy>⧉ 复制链接</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 热门视频流 ===== -->
+<section id="stream" style="background:linear-gradient(180deg,transparent,rgba(22,27,34,.55),transparent)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">TRENDING · 热门</span>
+        <h2>热门视频流 · 社区正在讨论</h2>
+      </div>
+      <p class="sub">由社区热度与完播口碑共同形成的推荐序列，每周更新一次，鼓励原创与真实表达。</p>
+    </div>
+    <div class="stream-grid">
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2312253d'/%3E%3Cstop offset='1' stop-color='%230a1522'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d1)'/%3E%3Cg fill='%234aa8ff' opacity='.85'%3E%3Crect x='70' y='220' width='34' height='80' rx='4'/%3E%3Crect x='118' y='180' width='34' height='120' rx='4'/%3E%3Crect x='166' y='140' width='34' height='160' rx='4'/%3E%3Crect x='214' y='200' width='34' height='100' rx='4'/%3E%3Crect x='262' y='110' width='34' height='190' rx='4'/%3E%3C/g%3E%3Cg stroke='%23f5b800' stroke-width='3' fill='none'%3E%3Ccircle cx='450' cy='160' r='64'/%3E%3Cpath d='M450 96 A64 64 0 0 1 514 160'/%3E%3C/g%3E%3Crect x='400' y='270' width='180' height='12' rx='6' fill='%23fff' opacity='.28'/%3E%3C/svg%3E" alt="《关键词背后的搜索量曲线》封面：柱状图与环形图">
+          <span class="vtag">行业观察</span><span class="dur">08:16</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>关键词背后的搜索量曲线：一年数据复盘</h3>
+          <p>过去十二个月，人们在搜什么、什么时候搜、又为什么放弃搜索。数据组用可视化解开三个反直觉现象。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%234aa8ff'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23081218'%3E%E9%99%88%3C/text%3E%3C/svg%3E" alt="创作者陈隽头像"><span>陈隽</span><span class="dot">·</span><span>7.2 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>913</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%232a1f3d'/%3E%3Cstop offset='1' stop-color='%23513a75'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d2)'/%3E%3Cg fill='none' stroke='%23c9a6ff' stroke-width='2' opacity='.8'%3E%3Crect x='90' y='90' width='200' height='130' rx='10'/%3E%3Crect x='350' y='150' width='200' height='130' rx='10'/%3E%3Cpath d='M290 155 L350 210'/%3E%3C/g%3E%3Ccircle cx='190' cy='155' r='26' fill='%23c9a6ff' opacity='.5'/%3E%3Ccircle cx='450' cy='215' r='26' fill='%23c9a6ff' opacity='.5'/%3E%3C/svg%3E" alt="《算法与人》封面：紫色流程图与对话节点">
+          <span class="vtag">人物访谈</span><span class="dur">13:44</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>算法与人：三位产品经理的深夜对话</h3>
+          <p>当推荐越来越懂你，边界在哪里？一场没有结论的讨论，保留所有犹豫和分歧。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23c9a6ff'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23201433'%3E%E5%AE%81%3C/text%3E%3C/svg%3E" alt="创作者宁川头像"><span>宁川</span><span class="dot">·</span><span>11.8 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>1,542</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f7f2e8'/%3E%3Cstop offset='1' stop-color='%23e3d2b8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d3)'/%3E%3Cg fill='%23a8794a' opacity='.55'%3E%3Crect x='80' y='100' width='480' height='14' rx='7'/%3E%3Crect x='80' y='140' width='400' height='14' rx='7'/%3E%3Crect x='80' y='180' width='440' height='14' rx='7'/%3E%3Crect x='80' y='220' width='320' height='14' rx='7'/%3E%3C/g%3E%3Ccircle cx='520' cy='290' r='44' fill='%23f5b800' opacity='.85'/%3E%3C/svg%3E" alt="《手写笔记数字化》封面：米色纸张与文字行">
+          <span class="vtag">实用技巧</span><span class="dur">06:21</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>手写笔记数字化：把纸质资料整理成可检索结构</h3>
+          <p>四步走完扫描、识别、标注与归档，一套普通人也用得起的个人资料管理方法。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d9b38c'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23402a16'%3E%E8%8B%8F%3C/text%3E%3C/svg%3E" alt="创作者苏禾头像"><span>苏禾</span><span class="dot">·</span><span>4.9 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>688</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2020'/%3E%3Cstop offset='1' stop-color='%231b3a34'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d4)'/%3E%3Cg stroke='%233fd18b' stroke-width='2' fill='none' opacity='.7'%3E%3Cpath d='M60 260 C160 200 200 300 300 220 S480 140 580 200'/%3E%3C/g%3E%3Cg fill='%233fd18b'%3E%3Ccircle cx='60' cy='260' r='7'/%3E%3Ccircle cx='300' cy='220' r='7'/%3E%3Ccircle cx='580' cy='200' r='7'/%3E%3C/g%3E%3Crect x='60' y='80' width='150' height='12' rx='6' fill='%233fd18b' opacity='.5'/%3E%3C/svg%3E" alt="《户外信号测试》封面：绿色山脊曲线">
+          <span class="vtag">户外活动</span><span class="dur">10:37</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>户外信号测试：在没有网络的山里如何找路</h3>
+          <p>带着离线地图和纸质笔记徒步三天，记录真实的定位误差与野外人机配合经验。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%233fd18b'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23081612'%3E%E5%91%A8%3C/text%3E%3C/svg%3E" alt="创作者周野头像"><span>周野</span><span class="dot">·</span><span>8.1 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>956</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff4a5e'/%3E%3Cstop offset='1' stop-color='%23a3142a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d5)'/%3E%3Cg fill='%23fff' opacity='.85'%3E%3Crect x='80' y='90' width='200' height='18' rx='9'/%3E%3Crect x='80' y='126' width='140' height='18' rx='9'/%3E%3C/g%3E%3Cg fill='none' stroke='%23fff' stroke-width='3' opacity='.7'%3E%3Ccircle cx='470' cy='190' r='80'/%3E%3Cpath d='M470 110 v160 M390 190 h160'/%3E%3C/g%3E%3Crect x='80' y='240' width='240' height='12' rx='6' fill='%23fff' opacity='.35'/%3E%3C/svg%3E" alt="《谣言辨识》封面：红色警示与十字标记">
+          <span class="vtag">知识科普</span><span class="dur">05:52</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>谣言辨识手册：五条判断信息可信度的笨办法</h3>
+          <p>不依赖工具也能做的信息核验：看来源、看时间、看交叉印证，把判断权拿回自己手里。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23ff4a5e'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23fff'%3E%E9%A1%BE%3C/text%3E%3C/svg%3E" alt="创作者顾言头像"><span>顾言</span><span class="dot">·</span><span>13.3 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>2,104</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d6' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8dcc8'/%3E%3Cstop offset='1' stop-color='%23b6a184'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d6)'/%3E%3Cg stroke='%236b4a2f' stroke-width='3' fill='none' opacity='.65'%3E%3Cpath d='M120 280 v-140 a60 60 0 0 1 120 0 v140'/%3E%3Cpath d='M300 280 v-100 a50 50 0 0 1 100 0 v100'/%3E%3Cpath d='M460 280 v-70 a40 40 0 0 1 80 0 v70'/%3E%3C/g%3E%3C/svg%3E" alt="《手作档案盒》封面：褐色纸盒与抽屉线条">
+          <span class="vtag">手作DIY</span><span class="dur">09:09</span><span class="play-ic"></span>
+        </div>
+        <div class="vbody">
+          <h3>手作档案盒：为家庭资料做一套能传下去的收纳</h3>
+          <p>从选纸到贴标，做一个能装下三代人证件的盒子，顺便聊聊资料保存的实用细节。</p>
+          <div class="vmeta"><img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23c9a26d'/%3E%3Ctext x='20' y='26' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%23201710'%3E%E6%9E%97%3C/text%3E%3C/svg%3E" alt="创作者林知夏头像"><span>林知夏</span><span class="dot">·</span><span>3.8 万次播放</span></div>
+          <div class="vops"><button data-like>♡ <span>521</span></button><button data-save>☆ 收藏</button><button data-copy>⧉ 复制</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 专题企划 ===== -->
+<section id="topics">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">SERIES · 企划</span>
+        <h2>专题企划 · 长期主义的选题</h2>
+      </div>
+      <p class="sub">平台每年推出少量深度专题，围绕同一主题持续数月更新，以匠心和耐心对待每一个值得被记录的问题。</p>
+    </div>
+    <div class="topic-list">
+      <article class="topic">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f5b800'/%3E%3Cstop offset='1' stop-color='%23ff6a00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='%23161b22'/%3E%3Ccircle cx='240' cy='60' r='50' fill='url(%23t1)' opacity='.85'/%3E%3Crect x='30' y='110' width='150' height='12' rx='6' fill='%23fff' opacity='.4'/%3E%3Crect x='30' y='134' width='100' height='10' rx='5' fill='%23fff' opacity='.22'/%3E%3C/svg%3E" alt="专题《搜索的下一站》封面：金色光球与文字行">
+        <div>
+          <h3>搜索的下一站</h3>
+          <p>年度主题企划，跟踪信息获取方式的十年变化，采访工程师、编辑与普通用户，已完成 8 期。</p>
+        </div>
+        <span class="status on">连载中 · 8 期</span>
+      </article>
+      <article class="topic">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23101b2b'/%3E%3Cg stroke='%234aa8ff' fill='none' stroke-width='2' opacity='.7'%3E%3Crect x='40' y='40' width='90' height='60' rx='8'/%3E%3Crect x='170' y='80' width='90' height='60' rx='8'/%3E%3Cpath d='M130 70 L170 110'/%3E%3C/g%3E%3Ccircle cx='85' cy='70' r='12' fill='%234aa8ff' opacity='.65'/%3E%3C/svg%3E" alt="专题《信息设计师》封面：蓝色设计框与连线">
+        <div>
+          <h3>信息设计师</h3>
+          <p>把复杂内容讲清楚的人都在做什么？聚焦版式、可视化与信息架构，共 6 期，已完结。</p>
+        </div>
+        <span class="status">已完结 · 6 期</span>
+      </article>
+      <article class="topic">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%230d241c'/%3E%3Cg stroke='%233fd18b' fill='none' stroke-width='2' opacity='.75'%3E%3Cpath d='M30 140 Q100 60 170 110 T290 70'/%3E%3C/g%3E%3Ccircle cx='170' cy='110' r='10' fill='%233fd18b'/%3E%3Ccircle cx='290' cy='70' r='7' fill='%233fd18b'/%3E%3C/svg%3E" alt="专题《城市与信号》封面：绿色路线曲线">
+        <div>
+          <h3>城市与信号</h3>
+          <p>走访十二座城市，记录网络信号、公共信息与在地生活的关系，第四期正在拍摄中。</p>
+        </div>
+        <span class="status on">更新中 · 3 期</span>
+      </article>
+      <article class="topic">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23f0e6d6'/%3E%3Cg stroke='%23805a34' fill='none' stroke-width='2' opacity='.7'%3E%3Crect x='50' y='50' width='220' height='90' rx='8'/%3E%3Cpath d='M50 85 H270'/%3E%3C/g%3E%3Crect x='70' y='100' width='80' height='10' rx='5' fill='%23805a34' opacity='.5'/%3E%3C/svg%3E" alt="专题《纸上答案》封面：米色档案卡片">
+        <div>
+          <h3>纸上答案</h3>
+          <p>寻找那些只存在于纸面的信息：手账、档案、旧报纸，以及在数字时代仍坚持记录的人。</p>
+        </div>
+        <span class="status">已完结 · 5 期</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 创作者矩阵 ===== -->
+<section id="creators" style="background:linear-gradient(180deg,transparent,rgba(28,35,48,.5),transparent)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">CREATORS · 创作者</span>
+        <h2>创作者矩阵 · 值得信赖的表达者</h2>
+      </div>
+      <p class="sub">平台持续运营的创作者社区，汇聚搜索技术、视觉设计、城市记录与知识科普等方向的长期主义者。</p>
+    </div>
+    <div class="creator-grid">
+      <article class="creator" data-creator="陈隽|搜索技术观察者|42|18.6万|前搜索产品经理，擅长把抽象的技术逻辑拆成可听懂的课。坚持每年只做 8 支长视频，其余时间都在读书和写脚本。">
+        <div class="creator-top">
+          <span class="av" style="background:#4aa8ff">陈</span>
+          <div><h3>陈隽</h3><span>搜索技术观察者</span></div>
+        </div>
+        <p>前搜索产品经理，擅长把抽象的技术逻辑拆成可听懂的课。坚持每年只做 8 支长视频，其余时间都在读书与写脚本。</p>
+        <div class="creator-foot"><span>作品 <b>42</b></span><span>关注 <b>18.6 万</b></span></div>
+      </article>
+      <article class="creator" data-creator="林知夏|信息设计与视觉|36|12.4万|独立设计师，关注文字如何在屏幕上被更好地阅读。作品多为版式拆解与视觉实验，风格克制、细节密集。">
+        <div class="creator-top">
+          <span class="av" style="background:#c9a26d">林</span>
+          <div><h3>林知夏</h3><span>信息设计与视觉</span></div>
+        </div>
+        <p>独立设计师，关注文字如何在屏幕上被更好地阅读。作品多为版式拆解与视觉实验，风格克制、细节密集。</p>
+        <div class="creator-foot"><span>作品 <b>36</b></span><span>关注 <b>12.4 万</b></span></div>
+      </article>
+      <article class="creator" data-creator="周野|城市与户外记录|58|21.3万|带着相机在城市与山里来回走。擅长长镜头与现场声，认为最好的记录是不打扰。三个城市纪录片的导演。">
+        <div class="creator-top">
+          <span class="av" style="background:#3fd18b">周</span>
+          <div><h3>周野</h3><span>城市与户外记录</span></div>
+        </div>
+        <p>带着相机在城市与山里来回走。擅长长镜头与现场声，认为最好的记录是不打扰。三部城市纪录片的导演。</p>
+        <div class="creator-foot"><span>作品 <b>58</b></span><span>关注 <b>21.3 万</b></span></div>
+      </article>
+      <article class="creator" data-creator="顾言|知识科普与核验|64|32.7万|信息核验方向的科普作者，做过五年事实核查。表达直接，不绕弯子，擅长用五条以内的方法让人自己学会判断。">
+        <div class="creator-top">
+          <span class="av" style="background:#ff4a5e">顾</span>
+          <div><h3>顾言</h3><span>知识科普与核验</span></div>
+        </div>
+        <p>信息核验方向的科普作者，做过五年事实核查。表达直接，不绕弯子，擅长用五条以内的方法让人学会自行判断。</p>
+        <div class="creator-foot"><span>作品 <b>64</b></span><span>关注 <b>32.7 万</b></span></div>
+      </article>
+      <article class="creator" data-creator="苏禾|资料整理与访谈|29|9.8万|档案整理师，喜欢从旧纸堆里找线索。作品节奏慢、信息密，常以一个人的三十年讲一座城的三十年。">
+        <div class="creator-top">
+          <span class="av" style="background:#d9b38c">苏</span>
+          <div><h3>苏禾</h3><span>资料整理与访谈</span></div>
+        </div>
+        <p>档案整理师，喜欢从旧纸堆里找线索。作品节奏慢、信息密，常以一个人的三十年讲一座城的三十年。</p>
+        <div class="creator-foot"><span>作品 <b>29</b></span><span>关注 <b>9.8 万</b></span></div>
+      </article>
+      <article class="creator" data-creator="宁川|数字社会访谈|33|15.2万|长期采访产品、算法与平台从业者，偏好保留分歧的对话。相信复杂性值得被完整呈现，而不是被剪成金句。">
+        <div class="creator-top">
+          <span class="av" style="background:#c9a6ff">宁</span>
+          <div><h3>宁川</h3><span>数字社会访谈</span></div>
+        </div>
+        <p>长期采访产品、算法与平台从业者，偏好保留分歧的对话。相信复杂性值得被完整呈现，而不是被剪成金句。</p>
+        <div class="creator-foot"><span>作品 <b>33</b></span><span>关注 <b>15.2 万</b></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 故事随笔 ===== -->
+<section id="stories">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">NOTES · 手记</span>
+        <h2>编辑部手记 · 影像之外的真实</h2>
+      </div>
+      <p class="sub">每一支片子背后都有一段没有被剪进正片的经历，它们同样构成平台对真实与温暖的坚持。</p>
+    </div>
+    <div class="story-wrap">
+      <article class="story">
+        <div class="date">2024 / 06 / 22 · 拍摄手记</div>
+        <h3>在机房待了十一个小时，只为拍到一次完整的加载过程</h3>
+        <p>为了呈现搜索请求真实经过的路径，我们把摄像机架在冷通道尽头。当天机房温度 19 度，设备风扇声盖过所有对话，最后靠字幕补全了现场。片子只有 18 分钟，但我们拍了 26 小时素材，删掉的每一段都舍不得。</p>
+      </article>
+      <article class="story">
+        <div class="date">2024 / 05 / 30 · 创作者来信</div>
+        <h3>一位县城中学老师，用我们的教程上了半年的信息课</h3>
+        <p>她发来一封长信，说把《谣言辨识手册》做成了三节课，学生第一次知道「交叉印证」这个词。信里附了 46 张学生手写的核验笔记照片。我们把它们做成了这一期的封面，并征得同意后放进了影像墙。</p>
+      </article>
+      <article class="story">
+        <div class="date">2024 / 04 / 18 · 制作复盘</div>
+        <h3>纪录片不该只有旁白，我们把话筒交给了现场</h3>
+        <p>剪到第七版时，我们删掉了全部旁白。图书馆翻页声、老式收音机的电流声、地铁进站的报站声，这些声音本身就在解释信息如何进入生活。成片比原计划短了 4 分钟，却更接近我们想表达的东西。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 影像墙 ===== -->
+<section id="wall" style="background:linear-gradient(180deg,transparent,rgba(22,27,34,.55),transparent)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">GALLERY · 影像墙</span>
+        <h2>社区影像墙 · 用户作品精选</h2>
+      </div>
+      <p class="sub">由社区投稿、官方筛选与月度投票共同产生，展示普通人镜头中的信息、城市与日常。</p>
+    </div>
+    <div class="wall">
+      <figure class="large">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 460'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231d2b3f'/%3E%3Cstop offset='1' stop-color='%230b1118'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='460' fill='url(%23w1)'/%3E%3Cg stroke='%23f5b800' stroke-width='2' fill='none' opacity='.7'%3E%3Ccircle cx='320' cy='220' r='120'/%3E%3Ccircle cx='320' cy='220' r='70'/%3E%3C/g%3E%3Ccircle cx='320' cy='220' r='20' fill='%23f5b800'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.25' stroke-width='1'%3E%3Cpath d='M0 120 H640 M0 340 H640 M160 0 V460 M480 0 V460'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《信息同心圆》：深蓝网格与金色圆环">
+        <figcaption>作品 01 · 信息同心圆 / 作者 何岸</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23f0e6d6'/%3E%3Cg fill='%23805a34' opacity='.55'%3E%3Crect x='30' y='40' width='120' height='12' rx='6'/%3E%3Crect x='30' y='68' width='180' height='12' rx='6'/%3E%3Crect x='30' y='96' width='150' height='12' rx='6'/%3E%3C/g%3E%3Ccircle cx='250' cy='150' r='34' fill='%23f5b800' opacity='.7'/%3E%3C/svg%3E" alt="影像墙作品《旧报纸剪贴》：米色纸面与棕色字行">
+        <figcaption>作品 02 · 旧报纸剪贴 / 作者 沈梨</figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 460'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2316382d'/%3E%3Cstop offset='1' stop-color='%230a1a14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='460' fill='url(%23w2)'/%3E%3Cg stroke='%233fd18b' fill='none' stroke-width='2' opacity='.75'%3E%3Cpath d='M60 400 Q120 240 180 300 T280 120'/%3E%3C/g%3E%3Cg fill='%233fd18b'%3E%3Ccircle cx='60' cy='400' r='7'/%3E%3Ccircle cx='180' cy='300' r='7'/%3E%3Ccircle cx='280' cy='120' r='7'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《山脊信号》：绿色长卷与路径节点">
+        <figcaption>作品 03 · 山脊信号 / 作者 周野</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23101b2b'/%3E%3Cg fill='%234aa8ff' opacity='.85'%3E%3Crect x='40' y='120' width='26' height='50' rx='4'/%3E%3Crect x='82' y='96' width='26' height='74' rx='4'/%3E%3Crect x='124' y='66' width='26' height='104' rx='4'/%3E%3Crect x='166' y='106' width='26' height='64' rx='4'/%3E%3C/g%3E%3Ccircle cx='250' cy='90' r='30' fill='none' stroke='%23f5b800' stroke-width='3'/%3E%3C/svg%3E" alt="影像墙作品《数据清晨》：蓝色柱状图与黄色圆环">
+        <figcaption>作品 04 · 数据清晨 / 作者 陈隽</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 200'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23302a3f'/%3E%3Cstop offset='1' stop-color='%23a8875f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='660' height='200' fill='url(%23w3)'/%3E%3Cg fill='%23fff' opacity='.82'%3E%3Crect x='60' y='60' width='120' height='90' rx='8'/%3E%3Crect x='210' y='40' width='120' height='110' rx='8'/%3E%3Crect x='360' y='70' width='120' height='80' rx='8'/%3E%3Crect x='510' y='50' width='90' height='100' rx='8'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《卡片陈列》：紫金渐变的四块卡片">
+        <figcaption>作品 05 · 卡片陈列 / 作者 林知夏</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%232a1218'/%3E%3Cg stroke='%23ff4a5e' fill='none' stroke-width='3' opacity='.8'%3E%3Ccircle cx='160' cy='100' r='56'/%3E%3Cpath d='M120 60 L200 140 M200 60 L120 140'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《核验标记》：暗红背景与交叉符号">
+        <figcaption>作品 06 · 核验标记 / 作者 顾言</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23ede3d4'/%3E%3Cg stroke='%236b4a2f' fill='none' stroke-width='3' opacity='.6'%3E%3Crect x='60' y='50' width='80' height='100' rx='6'/%3E%3Crect x='160' y='70' width='80' height='80' rx='6'/%3E%3C/g%3E%3Ccircle cx='260' cy='60' r='18' fill='%23f5b800' opacity='.8'/%3E%3C/svg%3E" alt="影像墙作品《收纳之间》：米色抽屉与书册">
+        <figcaption>作品 07 · 收纳之间 / 作者 苏禾</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 用户评价 ===== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">VOICES · 口碑</span>
+        <h2>社区口碑 · 来自用户的真实反馈</h2>
+      </div>
+      <p class="sub">我们相信口碑来自长期细节。以下评论来自社区用户，措辞与长度各不相同，未做统一润色。</p>
+    </div>
+    <div class="review-flow">
+      <article class="review">
+        <div class="who"><span class="av" style="background:#4aa8ff">A</span><b>阿澈</b><span>· 内容运营</span></div>
+        <p>把搜索讲清楚真的很难，这个平台的教程做到了不需要背景知识也能听懂。我把它当成每周固定的学习时间，边看边记，三个月做了两本笔记。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#3fd18b">K</span><b>Kevin_L</b><span>· 独立开发者</span></div>
+        <p>界面很克制，没有乱七八糟的弹窗，视频加载也稳。缺点是我常看的几位作者更新太慢，不过想想他们每期质量都那么高，等一等也认了。</p>
+        <div class="stars">★★★★☆</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#c9a26d">小</span><b>小满同学</b><span>· 大学生</span></div>
+        <p>第一次看《谣言辨识手册》就转给了家里长辈群，后来他们真的开始问「这个来源是哪」。这种影响比我自己看完十遍还有意义。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#ff4a5e">李</span><b>李工</b><span>· 中学教师</span></div>
+        <p>投过两次稿，编辑部回复都很具体，会指出哪一段节奏慢了、哪一句信息不清楚。虽然第二次还是没选上，但这种反馈本身就很值。希望有更多适合课堂使用的短片。</p>
+        <div class="stars">★★★★☆</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#c9a6ff">柚</span><b>柚子茶</b><span>· 自由摄影师</span></div>
+        <p>影像墙是我每周都会看的部分，普通人的视角往往比精美的商业片更打动人。那组《旧报纸剪贴》我反复看了好几遍，配色和情绪都很舒服。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#d9b38c">彭</span><b>彭先生</b><span>· 产品经理</span></div>
+        <p>作为一个从业者，我本来对这些内容是有点挑剔的，但《算法与人》那期确实拍出了我们内部讨论的真实感，没有把我讨厌的结论简化掉。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#f5b800">橙</span><b>橙子酱</b><span>· 社区用户</span></div>
+        <p>就是有个小建议，收藏夹能不能加分类，我收藏了太多教程，现在翻起来有点乱。别的都挺好，希望官方看看。</p>
+        <div class="stars">★★★☆☆</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#4aa8ff">M</span><b>Momo</b><span>· 编辑</span></div>
+        <p>同行视角看，这家最难得的是选题不追热点。城市系列的更新跨度快两年了，很多选题放在别处根本活不下来，这里却做完了。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+      <article class="review">
+        <div class="who"><span class="av" style="background:#3fd18b">林</span><b>林间</b><span>· 户外爱好者</span></div>
+        <p>《户外信号测试》是我今年看过最实用的一期，直接把方法抄进自己的出行清单。画面也好看，山里的风声保留得很好。</p>
+        <div class="stars">★★★★★</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 榜单 & 灵感 ===== -->
+<section id="rank">
+  <div class="container">
+    <div class="rank-idea">
+      <div class="panel-box">
+        <h3><span class="ico">榜</span>本周热度榜</h3>
+        <div class="rank-item"><span class="no">01</span><span>谣言辨识手册：五条判断信息可信度的笨办法</span><span class="heat">13.3 万</span></div>
+        <div class="rank-item"><span class="no">02</span><span>算法与人：三位产品经理的深夜对话</span><span class="heat">11.8 万</span></div>
+        <div class="rank-item"><span class="no">03</span><span>一次搜索的完整旅程：从输入框到答案落地</span><span class="heat">12.6 万</span></div>
+        <div class="rank-item"><span class="no">04</span><span>城市信息地图：在街巷里寻找被忽略的答案</span><span class="heat">9.4 万</span></div>
+        <div class="rank-item"><span class="no">05</span><span>户外信号测试：在没有网络的山里如何找路</span><span class="heat">8.1 万</span></div>
+        <div class="rank-item"><span class="no">06</span><span>搜索算法公开课 01：相关性是如何被定义的</span><span class="heat">8.3 万</span></div>
+      </div>
+      <div class="panel-box">
+        <h3><span class="ico">灵</span>创作灵感与工具</h3>
+        <div class="idea-item"><span class="k">脚本</span><span>把一次搜索拆成五个问题：谁在问、问了什么、为什么问、得到了什么、还缺什么。</span></div>
+        <div class="idea-item"><span class="k">标题</span><span>标题里带上具体数字与时间范围，比形容词更能让人相信你说的是真事。</span></div>
+        <div class="idea-item"><span class="k">剪辑</span><span>信息类视频每 40 秒给一次视觉换气：换机位、换图表、换景别，比加特效有用。</span></div>
+        <div class="idea-item"><span class="k">拍摄</span><span>记录屏幕时就先记录人手，输入框与手指的配合能让技术内容瞬间有人味。</span></div>
+        <div class="idea-item"><span class="k">结构</span><span>访谈先剪分歧，再剪共识；先给结论的片子往往没人看到最后。</span></div>
+        <div class="idea-item"><span class="k">挑战</span><span>本月创作挑战：用一支不超过三分钟的片子，讲清一条你每天都会用的信息路径。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 企业动态 & FAQ ===== -->
+<section id="updates" style="background:linear-gradient(180deg,transparent,rgba(22,27,34,.55),transparent)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">NEWS · 动态</span>
+        <h2>企业动态与官方发布</h2>
+      </div>
+      <p class="sub">平台运营、内容更新与合作进展的公开记录，保持透明是官方网站对用户最基本的承诺。</p>
+    </div>
+    <div class="dyn-faq">
+      <div>
+        <div class="dyn-item">
+          <div class="d">06 / 20</div>
+          <div><h4>“搜索的下一站”专题第八期上线</h4><p>本期聚焦移动端搜索行为的变化，包含三组用户访谈与一份可视化报告。</p></div>
+        </div>
+        <div class="dyn-item">
+          <div class="d">06 / 12</div>
+          <div><h4>2024 网络影像挑战赛开放报名</h4><p>面向所有创作者，主题为「我如何找到答案」，报名截至 7 月 20 日。</p></div>
+        </div>
+        <div class="dyn-item">
+          <div class="d">05 / 28</div>
+          <div><h4>创作者学院新增 6 期剪辑攻略</h4><p>涵盖信息类视频节奏、图表动画与访谈剪辑，支持高清下载学习。</p></div>
+        </div>
+        <div class="dyn-item">
+          <div class="d">05 / 09</div>
+          <div><h4>平台内容质量评估结果公布</h4><p>连续三年通过内容生态质量评估，原创比例与用户满意度均保持上升。</p></div>
+        </div>
+        <div class="dyn-item">
+          <div class="d">04 / 21</div>
+          <div><h4>与三家公共图书馆达成影像合作</h4><p>共同推进地方资料数字化记录，首批合作影片将于秋季发布。</p></div>
+        </div>
+      </div>
+      <div id="faq">
+        <details class="faq" open>
+          <summary>Yandex网页是一个什么性质的平台？</summary>
+          <div class="ans">Yandex网页是专注搜索技术、网络文化与创作者表达的官方网站与视频内容社区。平台以原创影像、深度访谈和实用教程为核心，为企业与创作者提供高品质内容生态，持续运营已超过八年。</div>
+        </details>
+        <details class="faq">
+          <summary>如何参与投稿？对作品有什么要求？</summary>
+          <div class="ans">点击页面上的「投稿入口」填写作品信息即可。我们更看重选题的真实性与信息密度，时长不限，但请确保画面清晰、声音可辨、内容原创且不侵犯他人权益。编辑部通常在一周内回复。</div>
+        </details>
+        <details class="faq">
+          <summary>内容更新频率是怎样的？</summary>
+          <div class="ans">焦点影像每周更新一至两支，专题企划按季度推进，创作者学院每月集中更新。公告条会第一时间同步新增内容与比赛报名信息。</div>
+        </details>
+        <details class="faq">
+          <summary>可以下载视频用于课堂教学吗？</summary>
+          <div class="ans">标注「可用于教学」的教程类内容支持高清下载，用于非商业教学场景，请保留片尾署名与来源说明。其他内容如需授权，请通过联系页面与我们沟通。</div>
+        </details>
+        <details class="faq">
+          <summary>平台如何保证内容的可信度？</summary>
+          <div class="ans">所有官方内容经过至少两轮事实核查；创作者内容在发布前会进行来源提示检查。涉及数据的内容均标注统计口径与时间范围，欢迎用户通过反馈入口指出问题。</div>
+        </details>
+        <details class="faq">
+          <summary>是否支持创作者获得收益？</summary>
+          <div class="ans">平台设有原创激励计划与专题合作机制，长期稳定更新的创作者可申请加入。具体规则在创作者中心公布，评审侧重内容质量而非单纯播放量。</div>
+        </details>
+        <details class="faq">
+          <summary>如何反馈问题或提出建议？</summary>
+          <div class="ans">可以通过页面底部的联系邮箱，或作品卡片上的反馈按钮提交。我们会逐条记录，产品类建议通常在两周内给出处理结论。</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系 ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <h2>与 Yandex网页 一起，把信息讲得更清楚</h2>
+        <p>无论你是创作者、企业还是教育机构，只要你在意内容的真实与品质，我们都欢迎你加入这个社区。合作、投稿、授权与反馈，都可以从这里开始。</p>
+        <div class="contact-act">
+          <button class="btn-primary" data-open="submit">提交投稿</button>
+          <button class="btn-ghost" data-open="share">分享给朋友</button>
+          <button class="btn-ghost" data-open="feedback">问题反馈</button>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div><span>合作邮箱</span>partner@yandex-web.example</div>
+        <div><span>投稿邮箱</span>create@yandex-web.example</div>
+        <div><span>媒体联络</span>press@yandex-web.example</div>
+        <div><span>办公地址</span>内容中心 · 影像制作与编辑部（工作日 10:00–19:00）</div>
+        <div><span>社区守则</span>尊重原创 · 标注来源 · 友善讨论</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#home"><span class="mark">Y</span><span>Yandex网页<small>SEARCH &amp; VISION</small></span></a>
+        <p>Yandex网页官方网站 · 专注搜索技术与网络文化的视频品牌平台。我们以原创影像记录信息如何流动，以持续运营的社区陪伴每一位创作者与企业成长。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容</h4>
+        <a href="#focus">焦点影像</a>
+        <a href="#stream">热门视频流</a>
+        <a href="#topics">专题企划</a>
+        <a href="#wall">社区影像墙</a>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <a href="#creators">创作者矩阵</a>
+        <a href="#reviews">用户口碑</a>
+        <a href="#rank">热度榜与灵感</a>
+        <a href="#" data-open="submit">投稿入口</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#updates">企业动态</a>
+        <a href="#faq">帮助中心</a>
+        <a href="#contact">联系我们</a>
+        <a href="#" data-open="feedback">意见反馈</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2016–2024 Yandex网页 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案号占位：XXXXXXX · 品牌与内容均为原创，转载请联系授权</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+<div id="toast" role="status"></div>
+
+<!-- 弹窗：投稿 -->
+<div class="modal-mask" id="modal-submit">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>投稿入口 · 提交你的作品</h3>
+    <p style="font-size:13px;color:var(--txt2);margin-bottom:6px">请填写基本信息，编辑部会在一周内回复。我们更看重选题真实性与信息密度。</p>
+    <label>作品标题</label>
+    <input type="text" placeholder="例如：我如何找到一份十年前的资料">
+    <label>内容方向</label>
+    <select>
+      <option>教程干货</option>
+      <option>人物访谈</option>
+      <option>城市探索</option>
+      <option>知识科普</option>
+      <option>创作幕后</option>
+      <option>生活方式记录</option>
+    </select>
+    <label>作品简介</label>
+    <textarea placeholder="用两三句话说明你的片子讲了什么，为什么值得被看见。"></textarea>
+    <label>联系方式</label>
+    <input type="text" placeholder="邮箱或社交账号">
+    <div class="actions">
+      <button class="btn-ghost" data-close>取消</button>
+      <button class="btn-primary" data-toast="投稿已提交，感谢你的信任，我们会尽快回复">提交</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：分享 -->
+<div class="modal-mask" id="modal-share">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>分享给朋友</h3>
+    <p style="font-size:13px;color:var(--txt2)">把 Yandex网页 官方网站推荐给同样在意内容品质的人。</p>
+    <div class="share-row">
+      <button data-toast="已生成微信分享提示，请打开微信粘贴">微信</button>
+      <button data-toast="已生成微博分享提示，请前往粘贴">微博</button>
+      <button data-toast="已生成 QQ 分享提示，请前往粘贴">QQ</button>
+    </div>
+    <div class="actions">
+      <button class="btn-ghost" data-copy>复制页面链接</button>
+      <button class="btn-primary" data-close>知道了</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：评论 -->
+<div class="modal-mask" id="modal-comment">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>社区评论</h3>
+    <div class="comment-item"><b>阿澈：</b>看完立刻去翻了资料，片子里提到的那套校验流程确实好用。</div>
+    <div class="comment-item"><b>Kevin_L：</b>希望能出加长版，18 分钟实在不够看。</div>
+    <div class="comment-item"><b>小满同学：</b>已经转给同学了，课堂上老师也放了这一段。</div>
+    <div class="comment-item"><b>李工：</b>建议配一份文字版，方便做笔记。</div>
+    <label style="margin-top:14px">写下你的看法</label>
+    <textarea placeholder="友善讨论，尊重原创与不同意见。"></textarea>
+    <div class="actions">
+      <button class="btn-ghost" data-close>关闭</button>
+      <button class="btn-primary" data-toast="评论已发布，感谢你的参与">发布</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：反馈 -->
+<div class="modal-mask" id="modal-feedback">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>问题反馈</h3>
+    <p style="font-size:13px;color:var(--txt2)">内容纠错、产品建议或合作咨询，都可以在这里提交。</p>
+    <label>反馈类型</label>
+    <select>
+      <option>内容纠错</option>
+      <option>产品建议</option>
+      <option>版权与授权</option>
+      <option>合作咨询</option>
+    </select>
+    <label>问题描述</label>
+    <textarea placeholder="请尽量写清具体位置与问题，方便我们核实。"></textarea>
+    <label>联系方式（选填）</label>
+    <input type="text" placeholder="邮箱或社交账号">
+    <div class="actions">
+      <button class="btn-ghost" data-close>取消</button>
+      <button class="btn-primary" data-toast="反馈已收到，我们会逐条记录并核实">提交</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：作者信息 -->
+<div class="modal-mask" id="modal-creator">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3 id="creatorName">创作者</h3>
+    <p id="creatorRole" style="font-size:12.5px;color:var(--accent);margin-bottom:10px"></p>
+    <p id="creatorDesc" style="font-size:13.4px;color:var(--txt2)"></p>
+    <div class="actions">
+      <button class="btn-ghost" data-close>关闭</button>
+      <button class="btn-primary" data-toast="已发送关注请求">关注此创作者</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  // 移动端导航
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', function(){
+    mainNav.classList.toggle('open');
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ mainNav.classList.remove('open'); }
+  });
+
+  // 搜索
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){ toast('请输入关键词后再搜索'); searchInput.focus(); return; }
+    var hit = false;
+    var cards = document.querySelectorAll('.vcard h3, .topic h3, .creator h3');
+    for(var i=0;i<cards.length;i++){
+      if(cards[i].textContent.indexOf(q) > -1){ hit = true; break; }
+    }
+    if(hit){ toast('找到与「' + q + '」相关的内容，已在上方高亮相关模块'); }
+    else { toast('暂未找到「' + q + '」的直接结果，试试更短的关键词'); }
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ doSearch(); }
+  });
+  searchInput.addEventListener('focus', function(){
+    searchInput.placeholder = '试试：搜索算法 / 城市 / 创作灵感';
+  });
+  searchInput.addEventListener('blur', function(){
+    searchInput.placeholder = '搜索内容 / 创作者 / 专题';
+  });
+
+  // 点赞 / 收藏
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-like]');
+    if(likeBtn){
+      var numSpan = likeBtn.querySelector('span');
+      var n = parseInt(numSpan.textContent.replace(/,/g,''), 10) || 0;
+      if(likeBtn.classList.contains('liked')){
+        likeBtn.classList.remove('liked');
+        n = Math.max(0, n-1);
+        likeBtn.innerHTML = '♡ <span>' + n.toLocaleString() + '</span>';
+      } else {
+        likeBtn.classList.add('liked');
+        n = n+1;
+        likeBtn.innerHTML = '♥ <span>' + n.toLocaleString() + '</span>';
+        toast('已点赞，感谢你的支持');
+      }
+      return;
+    }
+    var saveBtn = e.target.closest('[data-save]');
+    if(saveBtn){
+      saveBtn.classList.toggle('saved');
+      if(saveBtn.classList.contains('saved')){
+        saveBtn.textContent = '★ 已收藏';
+        toast('已加入收藏，稍后可在个人中心查看');
+      } else {
+        saveBtn.textContent = '☆ 收藏';
+        toast('已取消收藏');
+      }
+      return;
+    }
+    var copyBtn = e.target.closest('[data-copy]');
+    if(copyBtn){
+      var link = 'https://yandex-web.example/creator-page';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){ toast('链接已复制到剪贴板'); }, function(){ toast('当前浏览器不支持自动复制，请手动选择地址'); });
+      } else {
+        toast('链接已生成，请手动复制浏览器地址');
+      }
+      return;
+    }
+  });
+
+  // 弹窗控制
+  var maskNodes = document.querySelectorAll('.modal-mask');
+  function closeAll(){ maskNodes.forEach(function(m){ m.classList.remove('show'); }); }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-open]');
+    if(opener){
+      e.preventDefault();
+      var key = opener.getAttribute('data-open');
+      var target = document.getElementById('modal-' + key);
+      if(target){ closeAll(); target.classList.add('show'); }
+      return;
+    }
+    if(e.target.closest('[data-close]')){ closeAll(); return; }
+    if(e.target.classList.contains('modal-mask')){ closeAll(); return; }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeAll(); }
+  });
+
+  // toast 按钮
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-toast]');
+    if(t){
+      toast(t.getAttribute('data-toast'));
+      closeAll();
+    }
+  });
+
+  // 创作者弹窗
+  document.querySelectorAll('[data-creator]').forEach(function(card){
+    card.addEventListener('click', function(){
+      var parts = card.getAttribute('data-creator').split('|');
+      document.getElementById('creatorName').textContent = parts[0];
+      document.getElementById('creatorRole').textContent = parts[1] + ' · 作品 ' + parts[2] + ' · 关注 ' + parts[3];
+      document.getElementById('creatorDesc').textContent = parts[4];
+      closeAll();
+      document.getElementById('modal-creator').classList.add('show');
+    });
+  });
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  });
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 导航高亮
+  var navLinks = mainNav.querySelectorAll('a');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if(el){ sections.push({link:a, el:el}); }
+  });
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= pos){ current = s; }
+    });
+    navLinks.forEach(function(a){ a.classList.remove('active'); });
+    if(current){ current.link.classList.add('active'); }
+  });
+})();
+</script>
+</body>
+                                                                        </html>
